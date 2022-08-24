@@ -3,7 +3,7 @@ Welcome to the BDCC modding wiki! Here you can learn how to make mods ^^
 ## What things can be done through mods in BDCC
 
 ### Easy stuff:
-- Your first mod. New item
+- [Your first mod. New item](Your-first-mod.-New-item)
 - Your first scene
 - Characters
 - Bodyparts/hair
