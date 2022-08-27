@@ -4,7 +4,7 @@ Welcome to the BDCC modding wiki! Here you can learn how to make mods ^^
 
 ### Easy stuff:
 - [Your first mod. New item](Your-first-mod.-New-item)
-- Your first scene
+- [Your first scene](Your-first-scene)
 - Characters
 - Bodyparts/hair
 
