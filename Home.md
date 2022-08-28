@@ -5,7 +5,7 @@ Welcome to the BDCC modding wiki! Here you can learn how to make mods ^^
 ### Easy stuff:
 - [Your first mod. New item](Your-first-mod.-New-item)
 - [Your first scene](Your-first-scene)
-- Image packs. Adding your character art
+- [Image packs. Adding your character art](Image-packs.-Adding-your-character-art)
 - Characters
 - [Changing the core files of the game](Changing-the-core-files-of-the-game)
 
