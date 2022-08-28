@@ -7,8 +7,9 @@ Welcome to the BDCC modding wiki! Here you can learn how to make mods ^^
 - [Your first scene](Your-first-scene)
 - Image packs. Adding your character art
 - Characters
+- Changing the core files of the game
 
-### Somewhat complicated stuff:
+### Complicated stuff:
 - Bodyparts/hair
 - New species
 - Events that can trigger new scenes
@@ -17,9 +18,6 @@ Welcome to the BDCC modding wiki! Here you can learn how to make mods ^^
 - Status effects
 - Arena fighters
 - New map areas
-
-### Very complicated stuff:
-- Changing the core files of the game
 
 Eventually each topic will have a dedicated tutorial
 
