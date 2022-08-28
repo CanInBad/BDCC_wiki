@@ -5,10 +5,11 @@ Welcome to the BDCC modding wiki! Here you can learn how to make mods ^^
 ### Easy stuff:
 - [Your first mod. New item](Your-first-mod.-New-item)
 - [Your first scene](Your-first-scene)
+- Image packs. Adding your character art
 - Characters
-- Bodyparts/hair
 
 ### Somewhat complicated stuff:
+- Bodyparts/hair
 - New species
 - Events that can trigger new scenes
 - Npc attacks
