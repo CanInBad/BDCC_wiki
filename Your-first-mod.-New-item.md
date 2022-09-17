@@ -171,3 +171,6 @@ Here is the resulting mod from me. Use as example or to troubleshoot if you want
 
 [TestItemMod.zip](https://github.com/Alexofp/BDCC/files/9417316/TestItemMod.zip)
 
+## Do you have to make a module?
+
+Not really, module is basically just a way of grouping all the files related to your mod into one folder. Very handy for organizing. But it's possible to create a mod without it having any modules in it.
