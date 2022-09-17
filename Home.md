@@ -10,8 +10,7 @@ Welcome to the BDCC modding wiki! Here you can learn how to make mods ^^
 - [Changing the core files of the game](Changing-the-core-files-of-the-game)
 
 ### Complicated stuff:
-- Bodyparts/hair
-- New species
+- [Bodyparts/hair, Species](Bodyparts,-Species)
 - Events that can trigger new scenes
 - Npc attacks
 - Perks
