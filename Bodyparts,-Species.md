@@ -52,3 +52,49 @@ Now you should be able to just run the game and see that the new hair has appear
 If it did - good. Now you can follow the steps from other tutorials to create a new module and then create a mod. Don’t forget to change the `getDoll3DScene()` function to point at the new location when moving files.
 
 Here is an example mod that adds the red ponytail.
+
+[RedHairTestMod.zip](https://github.com/Alexofp/BDCC/files/9592132/RedHairTestMod.zip)
+
+Adding other types of bodyparts is very similar, just duplicate one of the existing ones, change the texture and assign the new material. Sometimes the scene will contain more than one mesh so you will have to change many materials. Same process though.
+
+Bodyparts can have other functions too.
+
+```
+extends BodypartTail
+
+func _init():
+	visibleName = "short tail"
+	id = "shorttail"
+
+func getCompatibleSpecies():
+	return [Species.Canine, Species.Wolf, Species.Feline, Species.Equine]
+
+func getLewdSizeAdjective():
+	return RNG.pick(["short"])
+
+func getLewdAdjective():
+	return RNG.pick(["fluffy"])
+
+func getDoll3DScene():
+	return "res://Player/Player3D/Parts/Tail/ShortTail/ShortTail.tscn"
+
+```
+
+`getCompatibleSpecies()` describes which species are allowed to use this bodypart. You can add a `Species.Any` in that list to allow any species to use it.
+
+## Adding a new species
+
+To add a new species, go into the `Species` folder and duplicate one of the existing ones. Open it and change the id to a unique one. Using a string there is okay, mods are unable to have globally defined constants.
+
+Then change the visible name and visible description functions, their result is shown in the character creator/in-game. Can also change the default bodyparts, they are applied when the species is first selected in the character creator.
+
+If you did that you might have noticed that you can’t pick most of the bodyparts. For example, how can we allow a short tail for our new speices? Easy, just add a function
+
+```
+func getAllowedBodyparts():
+	return ["shorttail"]
+```
+
+This function basically allows this species to use these bodyparts.
+
+That should be it. Now you can make it into a mod the same way as other times, by creating a module and making a zip archive out of it. You don’t -have- to make a module but they help organize and group mod files together in one folder, very useful.
