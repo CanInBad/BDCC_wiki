@@ -13,6 +13,7 @@ That should be it. Launch Godot, press import and point it to the `project.godot
 
 ### Easy stuff:
 - [Your first mod. New item](Your-first-mod.-New-item)
+- [What are modules](What-are-modules)
 - [Your first scene](Your-first-scene)
 - [Image packs. Adding your character art](Image-packs.-Adding-your-character-art)
 - Characters
