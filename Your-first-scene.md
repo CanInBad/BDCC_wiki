@@ -73,7 +73,7 @@ So, we got our scene written. How can we play it in-game? Easiest way is through
 ![pic1](https://user-images.githubusercontent.com/14040378/187076143-b4be0ceb-d08f-46ef-9ff3-ed087feee531.png)
 ![pic2](https://user-images.githubusercontent.com/14040378/187076153-d2046ff1-7890-4cb1-b568-2a642e7ece0f.png)
 
-If you want to add ability to run that scene without debug panel you will have to use events. Events provide a great way of extending the game without making it a mess. Events can 'subscribe' to certain 'triggers' like entering a room, talking to a npc, etc and then run some code. There will be a bigger tutorial about events so for now just try to understand what this event will do. Create a file called `TestSceneEvent.gd` inside `Events` folder and paste this:
+If you want to add ability to run that scene without debug panel you will have to use events. Events provide a great way of extending the game without making it a mess. Events can 'subscribe' to certain 'triggers' like entering a room, talking to a npc, etc and then run some code. There will be a bigger tutorial about events so for now just try to understand what this event will do. Create a file called `TestSceneEvent.gd` inside `Events/Event` folder and paste this:
 
 ```
 extends EventBase
