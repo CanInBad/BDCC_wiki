@@ -23,7 +23,7 @@ Keep in mind that some mods NEED to be updated for each new version of a game. I
 6) Copy the zip files into that folder
 7) Restart the game. There should be a BDCC.pck file loaded as mod and you should also see other mods
 
-If you don't do Step 5 the game will crash! Limitation of godot engine. `BDCC.pck` file comes from downloading the PC version
+If you don't do Step 5 the game will crash! Limitation of godot engine. `BDCC.pck` file can be downloaded separately from itch/github releases
 
 # HTML5
 1) Open the game
