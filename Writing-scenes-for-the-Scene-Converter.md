@@ -33,7 +33,7 @@ You pat Rahi. She purrs.
 
 ```
 
-To preview this scene, copy it into the scene converter, then press Convert and then Test Scene.
+To preview this scene, copy it into the scene converter, then press Convert and then Test Scene. You don't need much more if you just want a scene with actions. If you want to run code when you select certain actions, you will have to use someone's help or by learning gdscript yourself.
 
 ![pic](https://user-images.githubusercontent.com/14040378/221592289-b4dfd327-6a1e-488c-af6c-5a353a8e9edc.png)
 
@@ -60,7 +60,7 @@ Most commands work for both player and npcs but not everything.
 |Command|Description                  |Example output|
 |-------|-----------------------------|--------------|
 |pc.name| The visible name of a character| Player       |
-|rahi.name| The visible name of a character| Rahi         |
+|rahi.name|  | Rahi         |
 |pc.nameS| Visible name + s            | Player's     |
 |pc.he  | he/she/they/it depending on the gender| he           |
 |rahi.he|                             | she          |
@@ -109,3 +109,120 @@ Most commands work for both player and npcs but not everything.
 |rahi.yourself|                             | herself      |
 
 If you wanna capitilize the output, capitilize the first letter of the command. Example `pc.He` would become He
+
+# Running code when picking an action
+This is an example of running code
+
+```
+[[Give me credit, Gives you one credit, give_credit
+GM.pc.addCredits(1)
+addMessage("You received 1 credit")
+return # This return prevents us from going to give_credit section
+]]
+```
+Everything between the first line and the last line is gdscript code that will only run once when you pick this action. You can also change the flow using the `setState("SECTION_ID")` function. Just don't forget to add `return` at the end or it will be overritten
+
+```
+sceneID=RandomFlowScene
+
+Lets flip a coin.
+
+[[Flip coin, See what happens, flip_coin
+if(RNG.chance(50)):
+	setState("if_won")
+else:
+	setState("if_lost")
+return # important
+]]
+
+> if_won
+You won!
+
+> if_lost
+You lost. Aw.
+```
+
+# Fights
+Here is a simple example scenes that involves a fight
+
+```
+sceneID=RishaFightExampleScene
+Risha wants to fight you!
+
+[[Fight, Begin the fight, start_fight
+runScene("FightScene", ["risha"], "risha_fight")
+return
+]]
+
+[[[onSceneEnd, risha_fight
+processTime(20 * 60)
+var battlestate = _result[0]
+
+if(battlestate == "win"):
+	setState(“if_won”)
+	addExperienceToPlayer(30)
+else:
+	setState(“if_lost”)
+]]]
+
+> if_won
+! playAnimation(StageScene.Duo, "stand", {npc="risha", npcAction="defeat"})
+You won against Risha!
+
+> if_lost
+! playAnimation(StageScene.Duo, "defeat", {npc="risha"})
+You lost against Risha! Prepare to be fucked!
+
+```
+
+# Variables
+You can define variables with `%var` command. These variables will be automatically saved and loaded when you save/load the game. The syntax is `%var VAR_NAME DEFAULT_VALUE`
+
+examples:
+
+`%var used_condom false`
+`%var some_string "Hello world"`
+`%var times_used 0`
+
+You can then use these inside your gdscript code like normal variables
+
+# Conditions
+Allow you to show or not show certain parts depending on the condition
+
+example:
+```
+? GM.pc.hasReachablePenis()
+Player has a reachable penis. We can describe it by using {pc.penis}
+?else
+Player doesn't have a reachable penis
+?!
+```
+
+```
+? GM.pc.hasVagina()
+Player has a pussy
+
+[[Vaginal, Get your pussy bred, get_bred]]
+?!
+```
+
+# String interpolation
+Can be used to inject variables into the text. Or for conditional text too
+
+examples:
+```
+%var some_text "asdsfgafdg"
+
+Hello world, the variable some_text has {{some_text}} stored in it.
+```
+
+```
+Hello. I will check if the player has a penis. Player {{"has a penis" if GM.pc.hasPenis() else "doesn't have a penis"}}. Easy.
+```
+
+# Full example
+Here is a full example of a scene written in google docs that can be converted to code automatically:
+
+[https://docs.google.com/document/d/1D2TNCRrZCFeMx8b4kI_U83yhRm8MzKro28AKQZU79UA/edit?usp=sharing](https://docs.google.com/document/d/1D2TNCRrZCFeMx8b4kI_U83yhRm8MzKro28AKQZU79UA/edit?usp=sharing)
+
+There are 2 scenes actually. Don't copy the first >, it's not needed
