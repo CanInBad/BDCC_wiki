@@ -2,7 +2,7 @@
 
 Download this, it has everything you need to start creating skins + intructions
 
-[BDCCSkinStuff.zip](https://github.com/Alexofp/BDCC/files/12252933/BDCCSkinStuff.zip)
+[BDCCSkinStuff.zip](https://github.com/Alexofp/BDCC/files/12253145/BDCCSkinStuff.zip)
 
 Below is stuff for mod creators.
 
