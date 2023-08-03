@@ -12,6 +12,7 @@ That should be it. Launch Godot, press import and point it to the `project.godot
 ## What things can be done through mods in BDCC
 
 ### Easy stuff:
+- [Making Skins](Making-skins)
 - [Your first mod. New item](Your-first-mod.-New-item)
 - [What are modules](What-are-modules)
 - [Writing scenes for the Scene Converter! (new)](Writing-scenes-for-the-Scene-Converter)
