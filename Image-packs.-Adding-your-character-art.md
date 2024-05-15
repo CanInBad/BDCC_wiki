@@ -1,12 +1,13 @@
-! Download the game source files and godot itself before doing this, you will need the game opened inside the editor !
+> [!IMPORTANT] 
+> Download the game source files and godot itself before doing this, you will need the game opened inside the editor
 
 Image packs are the way of adding art to the characters. They work kinda like modules but allow the player to choose which artist they want to prioritize. Let's say you drew this fancy wolfo and wanna add him as a character art for the wolf that interogates you at the start of the game:
 
 ![wolfo](https://user-images.githubusercontent.com/14040378/187079102-c293831b-9156-4947-ae6a-917dac9e939d.png)
 
-To do this create a new folder inside `Images/ImagePacks` and name it with your nickname. I will use `RahiTheSecond` since `Rahi` exists already. Put your artwork inside that folder, can sort it in any way, I do it by character. Also create a `ImagePack.gd` file with simillar contents:
+To do this create a new folder inside `Images/ImagePacks` and name it with your nickname. I will use `RahiTheSecond` since `Rahi` exists already. Put your artwork inside that folder, can sort it in any way, I do it by character. Also create a `ImagePack.gd` file with similar contents:
 
-```
+```gdscript
 extends ImagePack
 
 func _init():
