@@ -5,7 +5,7 @@ Module is a simple way to group related files together. Best example of that wou
 
 Does that mean you can just remove a module and everything is gonna work like it was never there? Not really, most of the current modules depend on each other and it’s okay. Again, a module is just a folder to group things together.
 
-```
+```gdscript
 extends Module
 
 func _init():
@@ -29,7 +29,7 @@ Mods and modules are different things. Mod is a .zip archive that contains files
 
 Modules can have flags. Flags are basically variables but they are saved/loaded for you automatically and can also be edited through a handy in-game flags editor. Very handy for debugging.
 
-```
+```gdscript
 extends Module
 
 func getFlags():
