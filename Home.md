@@ -12,24 +12,24 @@ That should be it. Launch Godot, press import and point it to the `project.godot
 ## What things can be done through mods in BDCC
 
 ### Easy stuff:
-- [Making Skins](Making-skins.md)
-- [Your first mod. New item](Your-first-mod.-New-item.md)
+- [Making Skins](Making-skins)
+- [Your first mod. New item](Your-first-mod.-New-item)
 - [What are modules](What-are-modules)
-- [Writing scenes for the Scene Converter!](Writing-scenes-for-the-Scene-Converter.md)
-- [Your first scene](Your-first-scene.md)
-- [Image packs. Adding your character art](Image-packs.-Adding-your-character-art.md)
+- [Writing scenes for the Scene Converter!](Writing-scenes-for-the-Scene-Converter)
+- [Your first scene](Your-first-scene)
+- [Image packs. Adding your character art](Image-packs.-Adding-your-character-art)
 - Characters
-- [Changing the core files of the game](Changing-the-core-files-of-the-game.md)
+- [Changing the core files of the game](Changing-the-core-files-of-the-game)
 
 ### Complicated stuff:
-- [Bodyparts/hair, Species](Bodyparts,-Species.md)
+- [Bodyparts/hair, Species](Bodyparts,-Species)
 - Events that can trigger new scenes
 - Npc attacks
 - Perks
 - Status effects
 - Arena fighters
 - New map areas
-- [New floors](New-floors.md)
+- [New floors](New-floors)
 
 Eventually each topic will have a dedicated tutorial
 
