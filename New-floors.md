@@ -20,17 +20,17 @@ It is recommended to include scripting, you will thank me later.
 
 Inside the scene file, a floor is essentially a Node2D which instanced `res://Game/World/SubWorld.tscn` (will go into detail how to create such)
 
-Each floor is consist of rooms in 64 unit grids in both X and Y axis, if they're unaligned, on runtime it will automatically snap to nearest point in a grid\*
+Each floor is consists of rooms in 64 unit grids in both X and Y axis, if they're unaligned, on runtime it will automatically snap to the nearest point in a grid\*
 
-*\* its not exactly nearest point, please check [these lines](https://github.com/Alexofp/BDCC/blob/58885806c1bb8254ce250a56a08d241d5a106623/Game/World/World.gd#L169-L170)*
+*\* it's not exactly the nearest point, please check [these lines.](https://github.com/Alexofp/BDCC/blob/58885806c1bb8254ce250a56a08d241d5a106623/Game/World/World.gd#L169-L170)*
 
 ![Editor showcasing a floor with grid turned on](images/floor/mapEditing1.png)
 <center><sup>Editor showcasing a floor with grid turned on, added to make this article prettier :+1:</sup></center>  
 
-A room is Node2D which instanced `res://Game/World/GameRoom.tscn` (will go into detail how to create such)
+A room is a Node2D which instanced `res://Game/World/GameRoom.tscn` (will go into detail how to create such)
 
-Each room must be assigned to **unique** ID, if 2 rooms have the same ID, whichever load last get rejected, this also applies to other floors. This means that if you have a room that have the same ID as the other, the room that load last will disappear or crash the game entirely  
-(as of 2024-05-16 - I, CanInBad, didn't check if crashes or not)
+Each room must be assigned to **unique** ID, if 2 rooms have the same ID, whichever loads last get rejected, this also applies to other floors. This means that if you have a room that have the same ID as the other, the room that load last will disappear or crash the game entirely  
+(as of 2024-05-16 - I, CanInBad, didn't check if it cause crashes or not)
 
 A room can be configured a lot to do a lot of things, below image is an example
 <center><img src="images/floor/roomProperties.png" alt="A image showing properties in a room" width="35%"/></center>  
@@ -48,11 +48,11 @@ Here are notable properties
 4. Can X
    * If the direction is off, any room that connected in that direction will not be walkable, This will also affect path finding for scene using them.
 5. Room Sprite & Color
-   * Changes room's appearance on presets, experiment and see what they does.
+   * Changes room's appearance on presets, experiment and see what they do.
 6. Grid Color
    * Changes striped color across the room, if its on white the stripe will be invisible.
 7. Loctags
-   * Changes which type(s) of guards spawns in the room. *I haven't check if having multiple of them does anything.*
+   * Changes which type(s) of guards spawns in the room. *I haven't check if having multiple of them do anything.*
 8. Population
    * Changes which type of NPC to spawn. Please note that nurses, guards, and engineers are grouped as Guards
 9. Lootable and its settings
@@ -64,14 +64,14 @@ Here are notable properties
    * Credits
      * How much credit do player get once looting
    * Every X Days
-     * When does the loot get refills. If not specified, it will never get refilled.  
+     * When do the loots get refills. If not specified, it will never get refilled.  
   
 It is recommended that you do not use Lootable properties, using events will give you more flexibility.
 
 
-# Making a floor
+# Making A Floor
 
-## Root floor
+## Root Floor
 
 First step is to create a new scene file. It can be in the folder we discuss in [Floors Basics](#floors-basics) but this guide will follow registering the floor with module.  
 (if you don't know anything about module, you can learn [about it here](What-are-modules.md))
@@ -94,7 +94,7 @@ You then have to navigate yourself to `res://Game/World`, select `SubWorld.tscn`
 
 After opening, you will see a item/Node2D in Scene tab.  
 You can rename it whatever but ideally I recommend name it to the ID you're going to use, mine is going to be "helloWorld".  
-*Please note that this Node2D is a root of a floor, without it a floor doesn't exist*
+*Please note that this Node2D is a root of a floor,* ***without it*** *a floor doesn't exist*
 
 <center><img src="images/floor/floorRenamingRootNode.png" alt="Renaming a node by right click on it and click &#34;Rename&#34;, or click F2" width="60%"/></center>  
 <center><sup>Renaming a node by right click on it and click &#34;Rename&#34;, or hit F2</sup></center>
@@ -103,6 +103,8 @@ Adding scripting is easy as selecting the Node2D and click arrow drop down menu 
 A script can do things that events could but bundled with the floor itself.  
 *(There will be demo later after we finish making rooms)*
 
+It is recommended to save at this stage. If you haven't save earlier it will prompt you to choose a location. Please be mindful of where you put it.
+
 <center><img src="images/floor/floorExtendScript.png" alt="Image showing steps to extend script" width="40%"/></center>  
 <center><sup>Image showing steps to extend script</sup></center>
 
@@ -110,19 +112,52 @@ A script can do things that events could but bundled with the floor itself.
 
 After creating floor root node, we'll be covering how to make rooms
 
-Firstly, click the root node to select, then click the chain icon again to add another PackedScene, then search for "GameRoom". Select the one that says `Game/World/GameRoom.tscn`
+### Making Rooms
+
+Firstly, click the root node to select, then click the chain icon again to add another PackedScene, then search for "GameRoom". Select the one that says `Game/World/GameRoom.tscn` then open it.
 
 <center><img src="images/floor/floorAddNewRoom.png" alt="Image showing a dialog box with text &#34;GameRoom&#34;" width="40%"/></center>  
 <center><sup>Image showing a dialog box with text &#34;GameRoom&#34;</sup></center>
 
+Congratulations! You successfully created a room. Please give them ID an make sure that its not duplicating others.
 
+> [!NOTE]
+> If you don't put in any ID, it will use the editor's room name or node's name to be used as ID.  
+> And if you don't put any room's name, it will use the ID as room's name.  
+> [See the relevant code here.](https://github.com/Alexofp/BDCC/blob/58885806c1bb8254ce250a56a08d241d5a106623/Game/World/GameRoom.gd#L83-L86)
 
-<br />
-<br />
-<br />
-<!-- draft for later, i accidently typed this out first -->
+If you don't want to click the chain icon everytime you want to add a room, I recommend duplicating it, this can be done by either right clicking a room on the left and click "Duplicate". Or hitting Control + D. Be sure to change the ID every time you do this.
 
-It is recommended to have the scale of each room to be 0.5 on both axes, since vanilla game's rooms all have 0.5
+Now to move it.
+It is recommend to set up grid snapping for easier room moving. On the scene editor, there is a 3 vertical dot <sup><sub>*(its called kabab menu)*</sub></sup>
+next to magnet on a grid, click the kebab menu. Then click "Configure Snap...", a window will pop up. Set the "Grid Step" for both X and y to 64px.
 
-<center><img src="images/floor/roomSize.png" alt="A image showing Node2D size" width="60%"/></center>  
-<center><sup>A image showing Node2D size</sup></center>
+Make sure that you have Grid Snapping turned on when you're moving or else it won't snap
+
+<center><img src="images/floor/floorConfigureSnap.png" alt="Image showing steps to configure snap" width="40%"/></center>  
+<center><sup>Image showing steps to configure snap</sup></center>
+
+<center><img src="images/floor/floorSnapConfig.png" alt="This is my snap config when editing floor -CIB" width="40%"/></center>  
+<center><sup><i>This is my snap config when editing floor -CIB</i></sup></center>
+
+Room connections is done in runtime so you don't have to manually put them down.  
+They are made when a room has walkable room either to east or south. [Please see the relevant code here.](https://github.com/Alexofp/BDCC/blob/58885806c1bb8254ce250a56a08d241d5a106623/Game/World/World.gd#L105-L136)
+
+### Scripting
+
+This section will be short and not very helpful since most things that room scripting can do, events does it better.  
+This will take advantage of [signals](https://docs.godotengine.org/en/3.5/tutorials/scripting/gdscript/gdscript_basics.html#signals), and this section will assumed that you already read [Connecting a signal in the editor.](https://docs.godotengine.org/en/3.5/getting_started/step_by_step/signals.html#connecting-a-signal-in-the-editor)
+
+Signal `onEnter` will trigger when a player entered the room  
+
+Signal `onPreEnter` will trigger when a player is moving to the room
+
+Signal `onReact` is only used with buttons.
+
+List of methods you can use is inside `res://Game/World/GameRoom.gd` and examples for using it can be look for inside `res://Game/World/Floors`.
+
+# Example project
+
+This is a example project demonstrating how to add new floor as a module as well as other topics in this page. If you do not know what is a module please consult [this wiki page on Alexofp/BDCC](https://github.com/Alexofp/BDCC/wiki/What-are-modules).  
+
+[Here is a link to the project](https://github.com/CanInBad/newFloorExample/)
