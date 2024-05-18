@@ -1,6 +1,6 @@
 So, easiest way to add an item is to create a new file inside Inventory/Items folder. The game reads that folder and registers each file automatically. So, create a file in that folder named TestItem.gd and paste this code
 
-```
+```gdscript
 extends ItemBase
 
 func _init():
@@ -20,7 +20,7 @@ How can we get this item in-game? Well, at the moment, you can't. The only way i
 
 Okay. You got the item. You can look at its name and description but you can't interact with it in any way. How do we fix that? Easy. Take a look at this code.
 
-```
+```gdscript
 extends ItemBase
 
 func _init():
@@ -45,7 +45,7 @@ The item can now be used in combat. `_attacker` variable is player and `_receive
 
 Okay, great, we can use it in combat. But we can also make it usable outside of it with minimal changes.
 
-```
+```gdscript
 extends ItemBase
 
 func _init():
@@ -87,7 +87,7 @@ First two are pretty use. To add an item using code use this
 
 To add ability to buy the item take a look at this code:
 
-```
+```gdscript
 extends ItemBase
 
 func _init():
@@ -141,7 +141,7 @@ Firstly, you have to create a module. What's a module? It's basically just a fol
 
 Create a new folder inside `Modules` Name it `TestItemMod` or something. Move your `TestItem.gd` file inside it and also create a new file named `Module.gd` with this:
 
-```
+```gdscript
 extends Module
 
 func _init():

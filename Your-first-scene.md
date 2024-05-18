@@ -1,7 +1,7 @@
 Scenes are pretty much the main part of BDCC, they are the things that react to the player's input and then output text.
 
-Here is how the simpliest scene looks in code:
-```
+Here is how the simplest scene looks in code:
+```gdscript
 extends SceneBase
 
 func _init():
@@ -29,7 +29,7 @@ First two arguments of `addButton` are the button name and description. Third ar
 
 So, that's only one screen and one button. How do we add more? Take a look.
 
-```
+```gdscript
 extends SceneBase
 
 func _init():
@@ -70,12 +70,15 @@ Should be mostly self-explanatory. Since the `_react` function doesn't handle 's
 ### Running the scene
 So, we got our scene written. How can we play it in-game? Easiest way is through the debug panel. Open it, press the 'Run scene' button and type in `TestScene` as the sceneID argument. If you close the panel, you should see your scene.
 
+<div align="center">
+
 ![pic1](https://user-images.githubusercontent.com/14040378/187076143-b4be0ceb-d08f-46ef-9ff3-ed087feee531.png)
 ![pic2](https://user-images.githubusercontent.com/14040378/187076153-d2046ff1-7890-4cb1-b568-2a642e7ece0f.png)
+</div>
 
 If you want to add ability to run that scene without debug panel you will have to use events. Events provide a great way of extending the game without making it a mess. Events can 'subscribe' to certain 'triggers' like entering a room, talking to a npc, etc and then run some code. There will be a bigger tutorial about events so for now just try to understand what this event will do. Create a file called `TestSceneEvent.gd` inside `Events/Event` folder and paste this:
 
-```
+```gdscript
 extends EventBase
 
 func _init():
@@ -97,14 +100,18 @@ func onButton(_method, _args):
 
 This event subscribes to `EnteringPlayerCell` trigger which will run each time we enter the player's cell. Inside `run` we add a new button that will run our test scene. If you launch the game and go to your cell, you will see a new button appear.
 
+<div align="center">
+
 ![pic](https://user-images.githubusercontent.com/14040378/187076809-279a5297-03d2-474b-85c8-68927bf4f71d.png)
+
+</div>
 
 Pressing it will run the `TestScene` that we created. Great. If you want more ways to use events you will have to look at other ones and use them as an example, explaining everything will take too long.
 
 ### Running code
 Okay, we added our scene and can even trigger it without using the debug panel. How do we do something useful inside our scene? By using the `_react` function. Take a look
 
-```
+```gdscript
 extends SceneBase
 
 func _init():
@@ -149,13 +156,16 @@ func _react(_action: String, _args):
 
 Now if we press 'yes' the scene will add 100 lust to us and display a message. `addMessage` is a way of outputting text from the `_react` function, great for describing what happened. You do a lot of things, like ending the scene, running another scene using `runScene()`, changing flags, variables, anything. Best way to learn would be to look at the other scenes.
 
+<div align="center">
+
 ![pic](https://user-images.githubusercontent.com/14040378/187077031-0703f091-e636-4163-88fa-07320fe9634e.png)
+</div>
 
 ### Adding state
 
 So, sometimes you will need to add some state into your scene. The tricky thing here is supporting saving/loading. But the scenes make it very easy to save/load variables, let's add a simple counter.
 
-```
+```gdscript
 extends SceneBase
 
 var counter = 0
@@ -224,7 +234,10 @@ As you can see, you only need to define 2 extra functions, `saveData` and `loadD
 
 Here is how the scene will look if you press the counter button a few times.
 
+<div align="center">
+
 ![pic](https://user-images.githubusercontent.com/14040378/187077345-ddcce1f0-65a1-4d8b-8427-0bdc01e24c41.png)
+</div>
 
 The scene gets destroyed when it is ended, meaning all its state gets lost. If you wanna save a variable over a long time you will have to use flags. Flags need to be defined inside the module before they can be set with `setModuleFlag` and `getModuleFlag` functions, just look at how other modules do it.
 
@@ -232,7 +245,7 @@ The scene gets destroyed when it is ended, meaning all its state gets lost. If y
 
 Okay, we have our scene and an event that will launch that scene. How do we make that into a mod. First, you have to create a module. Create a new folder inside `Modules` and name it something like `TestSceneModule`, move both our scene and the event files inside it. Then create a `Module.gd` script and paste this:
 
-```
+```gdscript
 extends Module
 
 func _init():
@@ -249,11 +262,17 @@ func _init():
 
 Now if you run the game you should see a new module appear and our scene and event should function the same. Now to make this into a mod you will have to run `ModMaker` inside the devtools menu and add our whole module into the list on the right like so:
 
+<div align="center">
+
 ![pic](https://user-images.githubusercontent.com/14040378/187077915-8feb8fa8-0664-4fe6-b9f5-938f13e6b363.png)
+</div>
 
 Then when you press the `Make mod` button the game will gather your files and present you with a folder. Select everything and use any file archiver like WinRar to make a .zip archive. Then put that archive inside the mods folder and open a standalone version of the game (mods don't work if running the game from the editor). You should see this.
 
+<div align="center">
+
 ![pic](https://user-images.githubusercontent.com/14040378/187078058-b158595b-0348-4f86-89ee-f3ca67865746.png)
+</div>
 
 And the scene should appear inside the game too. If you did this, congrats, you made a mod. Use this one to troubleshoot if something doesn't work: 
 [TestSceneMod.zip](https://github.com/Alexofp/BDCC/files/9439807/TestSceneMod.zip)
@@ -278,7 +297,7 @@ The world didn't seem to care, aww.
 
 Okay, great. To turn this text into actual code run the game, open the devtools and select `SceneConverter`. Paste the raw text into the top textbox and press the `Convert` button. It should give you something like this:
 
-```
+```gdscript
 	if(state == ""):
 		saynn("The world spins around.")
 
@@ -294,11 +313,14 @@ Okay, great. To turn this text into actual code run the game, open the devtools 
 		# (scene ends here)
 ```
 
+<div align="center">
+
 ![pic](https://user-images.githubusercontent.com/14040378/187075768-59b6bf04-83b8-4e9c-978b-38ae3dbae556.png)
+</div>
 
 Okay, it gave us something but it's not working code yet. To make it work paste it into the `_run` function like so
 
-```
+```gdscript
 extends SceneBase
 
 func _init():

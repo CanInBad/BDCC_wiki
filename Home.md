@@ -28,11 +28,10 @@ That should be it. Launch Godot, press import and point it to the `project.godot
 - Perks
 - Status effects
 - Arena fighters
-- New map areas
 - [New floors](New-floors)
+- New rooms in existing floor without overwriting
 
 Eventually each topic will have a dedicated tutorial
-
 
 
 ## How mods work in BDCC

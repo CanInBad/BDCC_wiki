@@ -25,7 +25,9 @@ Each floor is consists of rooms in 64 unit grids in both X and Y axis, if they'r
 *\* it's not exactly the nearest point, please check [these lines.](https://github.com/Alexofp/BDCC/blob/58885806c1bb8254ce250a56a08d241d5a106623/Game/World/World.gd#L169-L170)*
 
 ![Editor showcasing a floor with grid turned on](images/floor/mapEditing1.png)
-<center><sup>Editor showcasing a floor with grid turned on, added to make this article prettier :+1:</sup></center><br />
+<div align="center">
+   <sup>Editor showcasing a floor with grid turned on, added to make this article prettier :+1:</sup>
+</div>
 
 A room is a Node2D which instanced `res://Game/World/GameRoom.tscn` (will go into detail how to create such)
 
@@ -33,9 +35,12 @@ Each room must be assigned to **unique** ID, if 2 rooms have the same ID, whiche
 (as of 2024-05-16 - I, CanInBad, didn't check if it cause crashes or not)
 
 A room can be configured a lot to do a lot of things, below image is an example
-<center><img src="images/floor/roomProperties.png" alt="A image showing properties in a room" width="35%"/></center><br />
-<center><sup>A image showing properties in a room</sup></center><br />
+<div align="center">
 
+   <img src="images/floor/roomProperties.png" alt="A image showing properties in a room" width="35%"/>
+
+   <sup>A image showing properties in a room</sup>
+</div>
 Here are notable properties
 
 1. Room Name
@@ -79,25 +84,37 @@ First step is to create a new scene file. It can be in the folder we discuss in 
 Right click on FileSystem window, it can be any folder or even a file and click "New Scene..."  
 You can name it whatever, the file extension will be `.tscn`.
 
-<center><img src="images/floor/newSceneFloor.png" alt="A image showing steps to create new scene" width="60%"/></center><br />
-<center><sup>A image showing steps to create new scene</sup></center><br />
+<div align="center">
+   <img src="images/floor/newSceneFloor.png" alt="A image showing steps to create new scene" width="60%"/>
+
+   <sup>A image showing steps to create new scene</sup>
+</div>
 
 Next, Click the chain link icon in the scene tab
 
-<center><img src="images/floor/instanceChildScene.png" alt="A image showing mouse cursor hovering over the icon with text &#34;Instance Child Scene&#34;" width="60%"/></center><br />
-<center><sup>A image showing mouse cursor hovering over the icon with text &#34;Instance Child Scene&#34;</sup></center>
+<div align="center">
+   <img src="images/floor/instanceChildScene.png" alt="A image showing mouse cursor hovering over the icon with text &#34;Instance Child Scene&#34;" width="60%"/>
+
+   <sup>A image showing mouse cursor hovering over the icon with text &#34;Instance Child Scene&#34;</sup>
+</div>
 
 You then have to navigate yourself to `res://Game/World`, select `SubWorld.tscn`, and open it 
 
-<center><img src="images/floor/floorSelectingSubWorld.png" alt="A image showing a window title &#34;Open Base Scene&#34; while selecting &#34;SubWorld.tscn&#34; in its file explorer" width="60%"/></center><br />
-<center><sup>A image showing a window title &#34;Open Base Scene&#34; while selecting &#34;SubWorld.tscn&#34; in its file explorer</sup></center><br />
+<div align="center">
+   <img src="images/floor/floorSelectingSubWorld.png" alt="A image showing a window title &#34;Open Base Scene&#34; while selecting &#34;SubWorld.tscn&#34; in its file explorer" width="60%"/>
+
+   <sup>A image showing a window title &#34;Open Base Scene&#34; while selecting &#34;SubWorld.tscn&#34; in its file explorer</sup>
+</div>
 
 After opening, you will see a item/Node2D in Scene tab.  
 You can rename it whatever but ideally I recommend name it to the ID you're going to use, mine is going to be "helloWorld".  
 *Please note that this Node2D is a root of a floor,* ***without it*** *a floor doesn't exist*
 
-<center><img src="images/floor/floorRenamingRootNode.png" alt="Renaming a node by right click on it and click &#34;Rename&#34;, or click F2" width="60%"/></center>  
-<center><sup>Renaming a node by right click on it and click &#34;Rename&#34;, or hit F2</sup></center><br />
+<div align="center">
+   <img src="images/floor/floorRenamingRootNode.png" alt="Renaming a node by right click on it and click &#34;Rename&#34;, or click F2" width="60%"/>
+
+   <sup>Renaming a node by right click on it and click &#34;Rename&#34;, or hit F2</sup>
+</div>
 
 Adding scripting is easy as selecting the Node2D and click arrow drop down menu then click Extend Script, it is recommended to keep them together in the same folder as the floor scene file.  
 A script can do things that events could but bundled with the floor itself.  
@@ -105,8 +122,11 @@ A script can do things that events could but bundled with the floor itself.
 
 It is recommended to save at this stage. If you haven't save earlier it will prompt you to choose a location. Please be mindful of where you put it.
 
-<center><img src="images/floor/floorExtendScript.png" alt="Image showing steps to extend script" width="40%"/></center><br />
-<center><sup>Image showing steps to extend script</sup></center><br />
+<div align="center">
+   <img src="images/floor/floorExtendScript.png" alt="Image showing steps to extend script" width="40%"/>
+
+   <sup>Image showing steps to extend script</sup>
+</div>
 
 ## Rooms
 
@@ -116,8 +136,11 @@ After creating floor root node, we'll be covering how to make rooms
 
 Firstly, click the root node to select, then click the chain icon again to add another PackedScene, then search for "GameRoom". Select the one that says `Game/World/GameRoom.tscn` then open it.
 
-<center><img src="images/floor/floorAddNewRoom.png" alt="Image showing a dialog box with text &#34;GameRoom&#34;" width="40%"/></center><br />
-<center><sup>Image showing a dialog box with text &#34;GameRoom&#34;</sup></center><br />
+<div align="center">
+   <img src="images/floor/floorAddNewRoom.png" alt="Image showing a dialog box with text &#34;GameRoom&#34;" width="60%"/>
+
+   <sup>Image showing a dialog box with text &#34;GameRoom&#34;</sup>
+</div>
 
 Congratulations! You successfully created a room. Please give them ID an make sure that its not duplicating others.
 
@@ -134,11 +157,16 @@ next to magnet on a grid, click the kebab menu. Then click "Configure Snap...", 
 
 Make sure that you have Grid Snapping turned on when you're moving or else it won't snap
 
-<center><img src="images/floor/floorConfigureSnap.png" alt="Image showing steps to configure snap" width="40%"/></center><br />
-<center><sup>Image showing steps to configure snap</sup></center><br />
+<div align="center">
+   <img src="images/floor/floorConfigureSnap.png" alt="Image showing steps to configure snap" width="40%"/>
 
-<center><img src="images/floor/floorSnapConfig.png" alt="This is my snap config when editing floor -CIB" width="40%"/></center><br />
-<center><sup><i>This is my snap config when editing floor -CIB</i></sup></center><br />
+   <sup>Image showing steps to configure snap</sup>
+
+   <img src="images/floor/floorSnapConfig.png" alt="This is my snap config when editing floor -CIB" width="40%"/>
+
+   <sup><i>This is my snap config when editing floor -CIB</i></sup>
+</div>
+
 
 Room connections is done in runtime so you don't have to manually put them down.  
 They are made when a room has walkable room either to east or south. [Please see the relevant code here.](https://github.com/Alexofp/BDCC/blob/58885806c1bb8254ce250a56a08d241d5a106623/Game/World/World.gd#L105-L136)

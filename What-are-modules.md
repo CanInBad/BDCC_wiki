@@ -1,7 +1,9 @@
 Module is a simple way to group related files together. Best example of that would be the portal panties module, it contains everything related to portal panties, the item itself, the quest and all the scenes/events in a single folder. That makes it way easier to manage the project without you having to jump between all the different folders while working on something specific.
 
-![pic](https://user-images.githubusercontent.com/14040378/191040547-52681cbe-7995-46d2-a343-df73ee56a0e7.png)
+<div align="center">
 
+![pic](https://user-images.githubusercontent.com/14040378/191040547-52681cbe-7995-46d2-a343-df73ee56a0e7.png)
+</div>
 
 Does that mean you can just remove a module and everything is gonna work like it was never there? Not really, most of the current modules depend on each other and it’s okay. Again, a module is just a folder to group things together.
 
@@ -53,8 +55,10 @@ func _init():
 		"res://Modules/SomeModule/TestSceneEvent.gd",
 	]
 ```
+<div align="center">
 
 ![pic](https://user-images.githubusercontent.com/14040378/191041191-b38ef2cf-0a32-4d4a-9d7c-1f6a6a707957.png)
+</div>
 
 To use the flags you can use the `setFlag`, `increaseFlag` and `getFlag` functions.
 

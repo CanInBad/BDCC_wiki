@@ -5,7 +5,7 @@ Probably the easiest bodypart type to start with is hair. So let's add some hair
 
 The easiest and the best way of doing so is copying one of the existing hairs and just changing the texture. That’s the best way to add any new bodypart too unless you wanna mess with create a custom mesh in blender. But if you need to do so - look at the `DollSkeleton.blend` file inside the `AssetsSource/character` folder, it has all the current meshes and animations. But if you just wanna swap the texture, this tutorial is for you.
 
-Open the game in the godot editor. Navigate to the `Player/Player3D/Parts/Hair` folder. Duplicate one of the folders and rename it to whatever you want. I will just dublicate `PonytailHair` and name it `RedPonytailHair`
+Open the game in the godot editor. Navigate to the `Player/Player3D/Parts/Hair` folder. Duplicate one of the folders and rename it to whatever you want. I will just duplicate `PonytailHair` and name it `RedPonytailHair`
 
 ![pic](https://user-images.githubusercontent.com/14040378/190865371-a64c5388-55dd-4f4b-a666-b133bbebeef4.png)
 
@@ -33,7 +33,7 @@ Now double click on it. It would look something like this.
 
 id must be unique, I will change it to `redponytailhair` . I will also change the visible name to ‘red ponytail’ and change the `getDoll3DScene()` return string to point to the scene file we created before. It should look like this.
 
-```
+```gdscript
 extends BodypartHair
 
 func _init():
@@ -59,7 +59,7 @@ Adding other types of bodyparts is very similar, just duplicate one of the exist
 
 Bodyparts can have other functions too.
 
-```
+```gdscript
 extends BodypartTail
 
 func _init():
@@ -88,9 +88,9 @@ To add a new species, go into the `Species` folder and duplicate one of the exis
 
 Then change the visible name and visible description functions, their result is shown in the character creator/in-game. Can also change the default bodyparts, they are applied when the species is first selected in the character creator.
 
-If you did that you might have noticed that you can’t pick most of the bodyparts. For example, how can we allow a short tail for our new speices? Easy, just add a function
+If you did that you might have noticed that you can’t pick most of the bodyparts. For example, how can we allow a short tail for our new species? Easy, just add a function
 
-```
+```gdscript
 func getAllowedBodyparts():
 	return ["shorttail"]
 ```

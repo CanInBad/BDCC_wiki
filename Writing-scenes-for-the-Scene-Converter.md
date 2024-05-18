@@ -108,7 +108,10 @@ Most commands work for both player and npcs but not everything.
 |pc.yourself| If player = yourself. If npc = himself/herself| yourself     |
 |rahi.yourself|                             | herself      |
 
-If you wanna capitilize the output, capitilize the first letter of the command. Example `pc.He` would become He
+If you wanna capitalize the output, capitalize the first letter of the command. Example `pc.He` would become He
+
+> [!NOTE]
+> For more commands, you can look inside [res://Util/GameParser.gd](https://github.com/Alexofp/BDCC/blob/58885806c1bb8254ce250a56a08d241d5a106623/Util/GameParser.gd#L66-L351)
 
 # Running code when picking an action
 This is an example of running code
