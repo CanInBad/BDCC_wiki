@@ -8,8 +8,7 @@
 You can get them inside the game's discord  
 [BDCC Discord Invite](https://discord.gg/7UGYBvQrc3)  
 
-Though, you have to manually install it. How you install it will be covered in this
-<!-- note to self, don't forget to link it when its finished -->
+Though, you have to manually install it. How you install it will be covered in [this section](#manually-installing-a-mod)
 
 ## Mod Browser
 
@@ -36,10 +35,10 @@ Click the "Mod Browser" button
 </div>
 <br />
 
-Inside the mod browser, on the left should be a list of mods. It is recommended to click "Newest first" to sort mods by date that its updated. Picking one of the mods will show its information on the right as well as a big "Download mod" button.  
+Inside the mod browser, on the left should be a list of mods. It is recommended to click "Newest first" to sort mods by date that its updated. Click for selecting one of the mods will show its information on the right as well as a big "Download mod" button.  
 
 > [!NOTE]
-> 1. The mod browser will sorted the mod by newest first by default.   
+> 1. The mod browser is sorted by newest first by default.   
 > 2. You can scroll down in the mod's information if the description is long enough.
 > 3. Don't forget to read the description.  
 > 4. Download button is always on top of the metadata/information  
@@ -78,8 +77,11 @@ It now has 3 sections, The metadata / general information w/ description, button
 
 This section will skip the general information.
 
+> [!NOTE]
+> If the Game Version shows red, that means the mod **may not** be compatible with this this game version you're running. It doesn't prevent the mod from working.
+
 > [!IMPORTANT]
-> Some mods don't have a metadata packed with them and will display
+> If the mod doesn't have metadata packed with them, it will display
 > `No 'insertModFileNameHere.json' file provided inside the mod`.  
 > This **DOESN'T HAVE ANY IMPACT ON ITS FUNCTIONALITY**.  
 > If you're having trouble(s) playing the game with mod(s), please consult this page (not done)
@@ -89,9 +91,110 @@ There are 4 buttons to manage mods, they're pretty self explanatory but we'll co
 
 You can get the gist on how large a mod is inside the last section.
 
-#### Updating mods
+### Updating mods
 
-NOT DONE
+To update mods, simply delete the current old version from your device and redownload it from the mod browser.
+
+Sometimes there will be a changelog exclusive to the mod browser.
+
+## Manually installing a mod
+
+Once you obtained packed mod(s) either from [Alexofp/BDCCMods](https://github.com/alexofp/bdccmods) or the game's discord, here are many ways to install them manually
+
+### Windows
+
+#### Open folder
+
+##### AppData way
+
+1. Open a run windows box (Win+R).
+2. Type in `%appdata%/Godot/app_userdata/BDCC/mods` then enter,  
+   this will open a new explorer/file browser window.
+3. Move the packed mod(s) inside the newly opened explorer window.
+
+Restart the game and the mod(s) should appear.
+
+##### Inside mod launcher
+
+0. Open the game with mod launcher enabled
+1. Click the Mods Folder button,
+   this will open a new explorer/file browser window
+2. Move the packed mod(s) inside the newly opened explorer window.
+
+Restart the game and the mod(s) should appear.
+
+##### Inside the game.
+
+1. Open the game. If you already have mod launcher enabled, either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
+2. Once you reach title screen, click Mods
+3. Click Open mods folder and move the packed mod(s) inside the newly opened explorer window
+
+Restart the game and the mod(s) should appear.
+
+
+#### Import in Mods menu at title screen
+
+1. Open the game. If you already have mod launcher enabled, either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
+2. Once you reach title screen, click Mods
+3. Click Import mod. This will show a dialog inside the game. You can then navgiate to where you downloaded packed mod files, select, and click open.
+
+Restart the game and the mod(s) should appear.
+
+### Linux
+
+#### mv
+
+1. Open your terminal, make sure that you're on user that you're playing on
+2. `mv <path to packed mod file> ~/.local/share/godot/app_userdata/BDCC/mods`
+
+Restart the game and the mod(s) should appear.
+
+#### Inside mod launcher
+
+1. Open the game with mod launcher enabled
+2. Click the Mods Folder button,
+   this will open a new explorer/file browser window
+3. Move the packed mod(s) inside the newly opened explorer window.
+
+Restart the game and the mod(s) should appear.
+
+#### Import in Mods menu at title screen
+
+1. Open the game. If you already have mod launcher enabled, either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
+2. Once you reach title screen, click Mods
+3. Click Import mod. This will show a dialog inside the game. You can then navgiate to where you downloaded packed mod files, select, and click open.
+
+Restart the game and the mod(s) should appear.
+
+### MacOS
+
+#### mv
+
+1. Open your terminal, make sure that you're on user that you're playing on
+2. `mv <path to packed mod file> ~/Library/Application Support/Godot/app_userdata/BDCC/mods`
+
+Restart the game and the mod(s) should appear.
+
+#### Inside mod launcher
+
+1. Open the game with mod launcher enabled
+2. Click the Mods Folder button,
+   this will open a new explorer/file browser window
+3. Move the packed mod(s) inside the newly opened explorer window.
+
+Restart the game and the mod(s) should appear.
+
+#### Import in Mods menu at title screen
+
+1. Open the game. If you already have mod launcher enabled, either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
+2. Once you reach title screen, click Mods
+3. Click Import mod. This will show a dialog inside the game. You can then navgiate to where you downloaded packed mod files, select, and click open.
+
+Restart the game and the mod(s) should appear.
+
+### Android
+
+please just use the mod browser :sob: :pray:
 
 # Old Information
 
