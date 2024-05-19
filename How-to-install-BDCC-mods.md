@@ -5,10 +5,13 @@
 >
 > Keep in mind that some mods **NEED** to be updated for each new version of a game. If the game crashes on start, remove mods.
 
-You can get them inside the game's discord  
-[BDCC Discord Invite](https://discord.gg/7UGYBvQrc3)  
+There are two ways.
 
-Though, you have to manually install it. How you install it will be covered in [this section](#manually-installing-a-mod)
+You can either get them inside the game's discord.  
+[BDCC Discord Invite](https://discord.gg/7UGYBvQrc3)  
+Though, you have to manually install it. How you install it will be covered in [this section.](#manually-installing-a-mod)
+
+Or you can get them inside the mod browser, instructions are below.
 
 ## Mod Browser
 
@@ -116,7 +119,7 @@ Restart the game and the mod(s) should appear.
 
 ##### Inside mod launcher
 
-0. Open the game with mod launcher enabled
+0. Open the game with [mod launcher enabled](#enabling-bdcc-mod-launcher)
 1. Click the Mods Folder button,
    this will open a new explorer/file browser window
 2. Move the packed mod(s) inside the newly opened explorer window.
@@ -125,7 +128,7 @@ Restart the game and the mod(s) should appear.
 
 ##### Inside the game.
 
-1. Open the game. If you already have mod launcher enabled, either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
+1. Open the game. If you already have [mod launcher enabled](#enabling-bdcc-mod-launcher), either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
 2. Once you reach title screen, click Mods
 3. Click Open mods folder and move the packed mod(s) inside the newly opened explorer window
 
@@ -134,7 +137,7 @@ Restart the game and the mod(s) should appear.
 
 #### Import in Mods menu at title screen
 
-1. Open the game. If you already have mod launcher enabled, either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
+1. Open the game. If you already have [mod launcher enabled](#enabling-bdcc-mod-launcher), either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
 2. Once you reach title screen, click Mods
 3. Click Import mod. This will show a dialog inside the game. You can then navgiate to where you downloaded packed mod files, select, and click open.
 
@@ -151,16 +154,16 @@ Restart the game and the mod(s) should appear.
 
 #### Inside mod launcher
 
-1. Open the game with mod launcher enabled
-2. Click the Mods Folder button,
-   this will open a new explorer/file browser window
-3. Move the packed mod(s) inside the newly opened explorer window.
+0. Open the game with [mod launcher enabled](#enabling-bdcc-mod-launcher)
+1. Click the Mods Folder button,
+   this will open a new file browser window
+2. Move the packed mod(s) inside the newly opened file browser window.
 
 Restart the game and the mod(s) should appear.
 
 #### Import in Mods menu at title screen
 
-1. Open the game. If you already have mod launcher enabled, either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
+1. Open the game. If you already have [mod launcher enabled](#enabling-bdcc-mod-launcher), either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
 2. Once you reach title screen, click Mods
 3. Click Import mod. This will show a dialog inside the game. You can then navgiate to where you downloaded packed mod files, select, and click open.
 
@@ -177,24 +180,56 @@ Restart the game and the mod(s) should appear.
 
 #### Inside mod launcher
 
-1. Open the game with mod launcher enabled
-2. Click the Mods Folder button,
-   this will open a new explorer/file browser window
-3. Move the packed mod(s) inside the newly opened explorer window.
+0. Open the game with [mod launcher enabled](#enabling-bdcc-mod-launcher)
+1. Click the Mods Folder button,
+   this will open a new file browser window
+2. Move the packed mod(s) inside the newly opened file browser window.
 
 Restart the game and the mod(s) should appear.
 
 #### Import in Mods menu at title screen
 
-1. Open the game. If you already have mod launcher enabled, either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
+1. Open the game. If you already have [mod launcher enabled](#enabling-bdcc-mod-launcher), either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
 2. Once you reach title screen, click Mods
 3. Click Import mod. This will show a dialog inside the game. You can then navgiate to where you downloaded packed mod files, select, and click open.
 
 Restart the game and the mod(s) should appear.
 
-### Android
+### Mobile (Android)
 
-please just use the mod browser :sob: :pray:
+<sup>*please just use the mod browser :sob: :pray:*</sup>
+
+> [!IMPORTANT]
+> Requires [BDCC.pck](#android-bdccpck) for mods to work
+
+#### Manually moving them
+
+Default mods folder location for android is inside your Documents folder.
+Look for folder named `BDCCMods`, if there is no such folder, make a new folder with exact letter cases.
+
+Move the packed mod(s) to `/Documents/BDCCMods`
+
+Restart the game and the mod(s) should appear.
+
+#### Import in Mods menu at title screen
+
+> [!CAUTION]
+> If you're running Android 13+, please give the game permission to access your files. Please see this [page for extensive guide](https://gist.github.com/CanInBad/cd1fb519a4fc604a83115b553a4a7402#file-3permshenanigans-md).
+
+1. Open the game. If you already have [mod launcher enabled](#enabling-bdcc-mod-launcher), either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
+2. Once you reach title screen, click Mods
+3. Click Import mod. This will show a dialog inside the game. You can then navgiate to where you downloaded packed mod files, select, and click open.
+
+Restart the game and the mod(s) should appear.
+
+## Android BDCC.pck
+
+Exclusive to android, you can build BDCC.pck inside the mod launcher. If you do not know how to open the mod launcher, [please see this section.](#enabling-bdcc-mod-launcher)
+
+<br />
+<br />
+<br />
+<br />
 
 # Old Information
 
