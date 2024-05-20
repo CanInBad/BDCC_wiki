@@ -100,9 +100,9 @@ To update mods, simply delete the current old version from your device and redow
 
 Sometimes there will be a changelog exclusive to the mod browser.
 
-## Manually installing a mod
+## Manually installing mod(s)
 
-Once you obtained packed mod(s) either from [Alexofp/BDCCMods](https://github.com/alexofp/bdccmods) or the game's discord, here are many ways to install them manually
+Once you obtained packed mod(s) either from [Alexofp/BDCCMods](https://github.com/alexofp/bdccmods) or the [game's discord](https://discord.com/channels/972105858932678656/1021686418512289792), here are many ways to install them manually
 
 ### Windows
 

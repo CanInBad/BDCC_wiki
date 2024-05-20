@@ -1,5 +1,9 @@
 Welcome to the BDCC modding wiki! Here you can learn how to make mods ^^
 
+## User Modding
+
+If you aren't making a mod and only using them, please go to [User Support page.](User-Support)  
+
 ## How to start modding
 
 BDCC is running on Godot 3.x engine, usually the latest stable version. At the writing of this tutorial Godot 4.x is in beta but moving to it would require major rewrites as the scripting language gdscript was changed quite a bit. So, what do you need to start modding.
