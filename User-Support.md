@@ -3,7 +3,7 @@ This page is dedicated to help users by linking resources to other page
 ## General
 
 [Troubleshooting](User's-troubleshooting)  
-[Permission Shenanigans](User's-Permission-Shenanigans) **// NOT DONE!!!**
+[Permission Shenanigans](User's-Permission-Shenanigans)  
 
 ## Modding
 
