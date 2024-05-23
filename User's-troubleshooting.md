@@ -30,7 +30,7 @@ If you're using mods, please see [this section.](#my-game-crashes-when-loading-i
 
 ### I can't export or import saves using the in-game exporter/importer
 
-This is an issue exclusive to Android. For Android's case, you have to grant the game permissions to `android.permission.WRITE_EXTERNAL_STORAGE` and `android.permission.READ_EXTERNAL_STORAGE`. Since those permissions technically don't existed in Android 13 and up, the game can't request them. You can find the instructions to [grant them here.](https://gist.github.com/CanInBad/cd1fb519a4fc604a83115b553a4a7402#file-3permshenanigans-md)
+This is an issue exclusive to Android. For Android's case, you have to grant the game permissions to `android.permission.WRITE_EXTERNAL_STORAGE` and `android.permission.READ_EXTERNAL_STORAGE`. Since those permissions technically don't existed in Android 13 and up, the game can't request them. You can find the instructions to [grant them here.](User's-Permission-Shenanigans)
 
 ### My game CRASHES when I loaded into a game save or playing
 

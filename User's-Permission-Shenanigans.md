@@ -116,8 +116,6 @@ Open the app and type in
 
 You should be able to use `adb` now, try typing `adb start-server` and enter to start the server. If there is nothing error out then it should be fine to go to next step
 
-If not, follow **NOT DONE** <!-- for the love of god please replace me REPLACEME -->
-
 ### 2) Enable Debugging mode
 
 If you haven't enabled it yet, you can go to your settings app > About Phone (or your equivalence) > Software information > Tap "Build Number" 7 times. If you don't understand this text then here is a [Video tutorial](https://youtu.be/3GBrEczOnOk&t=67)  
