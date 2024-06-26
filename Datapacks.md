@@ -8,3 +8,5 @@ Here is what you can create with datapacks:
 - New scenes (not yet, maybe in the future)
 
 Skins that are added through datapacks are always avaiable. But to make custom dynamic characters appear in your save, you gotta go to the `Pause menu -> Datapacks -> Press 'load' on the datapack`. After that, all the characters that this datapack has will be added into your current save. To get rid of them, you can press `'unload'` in the same menu.
+
+To get your datapack added into the built-in datapack browser, you gotta post it in the discord server's `datapacks` channel (The in-game list is updated manually by me).
