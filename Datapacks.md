@@ -5,7 +5,7 @@ They're easy to make and don't require coding knowledge. But they're also heavil
 Here is what you can create with datapacks:
 - Custom dynamic characters
 - New skins
-- New scenes (not yet, maybe in the future)
+- New scenes and quests ([Datapack scene creator tutorial](Datapack-scene-creator-tutorial))
 
 Skins that are added through datapacks are always avaiable. But to make custom dynamic characters appear in your save, you gotta go to the `Pause menu -> Datapacks -> Press 'load' on the datapack`. After that, all the characters that this datapack has will be added into your current save. To get rid of them, you can press `'unload'` in the same menu.
 
