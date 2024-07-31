@@ -159,3 +159,79 @@ https://github.com/user-attachments/assets/7c05a300-6f44-4745-889a-0888674c2edf
 This is very useful in case you want to test your scene with different player characters who might have different stats or bodyparts.
 
 And that's mostly it. You can go explore all the different tabs and code blocks from here, I (Rahi) tried to make everything as intuitive as possible.
+
+# Characters tab
+Alright, you know how to make scenes about meowing into the void. But how do you add someone into the scene who can meow back?
+
+That's where the characters tab of the scene editor comes in!
+
+When you switch to it, you will see something like this:
+
+![pic](https://github.com/user-attachments/assets/4182014c-dba1-4403-b89f-207ac8572d2a)
+
+BDCC has a lot of characters.. And so trying to remember all the IDs or making you choose the right one out of a giant list each time would be very time-consuming and tedious. So, to aid you, I added ability to define a list of 'involved' characters. You fill this list only once per scene and then, in return, the editor will present you with this small list each time you need to choose a character in any block.
+
+The player character (pc) is always involved in all scenes.. but to add others you just choose someone from this list and press the Add button. All the datapack characters should be first so you can find them without having to use the search.
+
+I'm gonna add Rahi.
+
+https://github.com/user-attachments/assets/241e01e8-98a6-4d50-b9a6-526f0b6f69a5
+
+As you can see, a new entry has appeared in the list.
+
+![pic](https://github.com/user-attachments/assets/fc44bd1b-48f7-44ef-a51c-9b41c2a86c86)
+
+The first field is 'Alias'. It's basically a replacement for an ID. Alias is what you will see (and use) instead of the full character ID. The point of an Alias is that datapack character IDs are usually pretty long (because they also contain the datapack ID). And so the editor will actually strip that datapack ID when choosing an Alias automatically. But you can also choose a different alias for any added character, your choice!
+
+Added on start checkbox.. does exactly what it says it does. If it's checked, the character will appear in the 'nearby characters' panel when the scene starts. So if I start the scene now I will actually get Rahi's portrait in the top left corner.
+
+https://github.com/user-attachments/assets/f3dd49dd-5c3e-41a6-8996-bda242639f5a
+
+If you want characters to appear (or go away) after some player actions, you can use the `add character` and `remove character` blocks from the Scene group. Here is how you do that:
+
+https://github.com/user-attachments/assets/b888193e-3f46-4353-bcbf-383864652548
+
+The variant field defines which portrait variant will be used (if the character is added from the start). Pretty much all the characters only have 2 portraits: "" (empty string) which corresponds to their normal portrait and a "naked" one which makes them appear naked. The second slot of the `add character` block also defines which variant of the portrait to use.
+
+https://github.com/user-attachments/assets/be7c0912-f78d-4d86-a316-76dbac472c58
+
+Alright, we have the characters appearing the nearby panel. But how do we make them say something?
+
+There are 2 ways to do this:
+First way is by using a `Say` block. You add it, pick the character and type in the text that you want that character to say.
+
+https://github.com/user-attachments/assets/79ac7829-04bc-44ad-af1f-ad71c0d30b7a
+
+It works but it might be annoying for you to have to constantly split your big output blocks with these small say blocks. And so the second way is here to help with that.
+
+Rather than adding a new block, you can type..
+
+`=char_alias: Text that you want to be said`
+
+..straight in the output block (it must be on a new line and the = character must be first).
+
+So here is how I'd make Rahi say the same thing but with this method:
+
+https://github.com/user-attachments/assets/63ba7da6-ab3f-4e74-9eff-276f1c6816d7
+
+Much simpler, right? But you're free to choose any method. The fullscreen text editor has many buttons that can help you to add various macroses that the game has so feel free to explore it. For example, if you want Rahi to say the player's name you can type in this:
+
+`=rahi: Hello, {pc.name}!`
+
+You can use any alias or ID instead of `pc`.
+
+`=rahi: Hello, {rahi.heShe} {rahi.isAre} {rahi.name}.`
+
+This will output: Hello, she is Rahi.
+
+Alright. We can make the characters appear in the nearby characters panel and we can even make them say stuff.. but how do we actually make it so we can see them? How do we make them do animations? Well, the `Play` block will help you with that!
+
+It works slightly differently than most blocks.. because there are just too many things you can tweak about an animation. So the way the works is: You drag it into the code and then you press on it to 'configure' it.
+
+When you will do that, a window will open with all the settings. It should be self-explanatory I hope. You choose an animation on the left and then change its settings in the middle. To pick the characters that will participate in the animation look out for the 'pc' and 'npc' settings. You can also make them naked/hard/caged-up here.. and some scenes also have additional unique settings, feel free to experiment!
+
+https://github.com/user-attachments/assets/45aabef5-3219-4a81-a671-a9e1360fe8dc
+
+As you may notice, the player character is actually a white placeholder doll (because there is no player loaded in the editor) but all the other characters will look like their normal self.
+
+Alright, well.. This should be enough to let you add characters into your scenes!
