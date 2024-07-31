@@ -160,7 +160,7 @@ This is very useful in case you want to test your scene with different player ch
 
 And that's mostly it. You can go explore all the different tabs and code blocks from here, I (Rahi) tried to make everything as intuitive as possible.
 
-# Characters tab
+# Characters tab. Playing animations
 Alright, you know how to make scenes about meowing into the void. But how do you add someone into the scene who can meow back?
 
 That's where the characters tab of the scene editor comes in!
@@ -235,3 +235,87 @@ https://github.com/user-attachments/assets/45aabef5-3219-4a81-a671-a9e1360fe8dc
 As you may notice, the player character is actually a white placeholder doll (because there is no player loaded in the editor) but all the other characters will look like their normal self.
 
 Alright, well.. This should be enough to let you add characters into your scenes!
+
+# Variables tab. Variables and flags
+Your scene of petting a meowing Rahi is almost perfect.. But you get a feeling that it's missing something.. Something like a.. A pat counter, of course, obviously!
+
+To create it, we will need to use variables. So let's learn how to do that.
+
+When you switch to the variables tab for the first time you will see this:
+
+![pic](https://github.com/user-attachments/assets/46f28fbf-f904-4e9f-92d4-0411cdc4b9cd)
+
+Variables and flags work very similarly. The main differences are:
+- Variables are stored per-scene, flags are stored for the whole datapack. This means that you can use the same flags in different scenes of the same datapack.. but you can't get access to variables of another scene. Each scene has its own variables!
+- Flags will stay here even if there are no scenes running. All the variables and their values will be lost when the scene that has them ends. 
+- Changed/accessed by different code blocks
+- The player can edit datapack flags through the debug menu. They can't edit the variables
+
+So, basically, you use variables for local scene progress and you use flags if you want to track something over multiple scenes (or if you want to save the progress of the same scene).
+
+Since I don't care about saving the amount of pats for now, I will use a variable.
+
+After you enter the variable name (I chose headpats) and press 'Add', a new entry will appear.
+
+![pic](https://github.com/user-attachments/assets/021c6e08-3bea-4900-900d-52db4aa3f533)
+
+The type and the default values are quite important. You can make a variable/flag have one of the 4 supported types:
+1. Bool. These only have 2 values: true or false. Useful for something like a 'met_Character_X'  or 'scene_X_Happened' flags.
+2. Number. Yeah, just a number. Supports a decimal point. Useful for something like a.. counter.
+3. String. Useful for storing text.
+4. Any. Means this variable can hold any kind of value (bool, number, string). Doesn't support default values, will return Null by default (a special value that means 'nothing')
+
+Use Any type only if you really have to. The code blocks will actually give you a useful error if you try to assign a wrong kind of value to the variables (if try to assign True to a number variable for example).
+
+So.. for my counter I will use a number variable. And I will leave the default value at 0
+
+To get or set the flags/variables, you can use these blocks here:
+ 
+![pic](https://github.com/user-attachments/assets/d5c9eaa7-b880-4cad-92a0-e14b34fa59fa)
+
+![pic](https://github.com/user-attachments/assets/4d6b6670-19f6-47fb-b44b-177aa55f6f0c)
+
+Orange ones are for the variables and the cyan ones are for the flags.
+
+First block gives you the value of a selected variable. The next 3 blocks set the variable's value instead. You got one for bools, numbers and strings. And the last one increases the selected number variable by a certain amount.. which is what we want.
+
+Drag the orange `Inc` block into the code of the 'Meow' button.. You will notice that you can then choose what variable you want to increase.
+
+![pic](https://github.com/user-attachments/assets/659f0fcc-0bf6-494e-954f-c5f8c8677996)
+
+We only have one variable defined but just know that all of them will show up here, you don't have to type the variable name out every time.
+
+Okay, how do we see how many pats we did? I will just make Rahi say it.. Look at the video for the whole process..
+
+https://github.com/user-attachments/assets/ad02b281-54db-44b4-bec4-965073f2b4cb
+
+As you can see, I dragged the 'get' block into the text field of the 'say' block, making Rahi say the amount of headpats she received. If you want to make it so Rahi says more than just a number, there 2 ways to do it:
+1. Using more blocks. The strings group has a 'concat' block which allows you to combine texts (or any values really) together.
+2. Using string interpolation. These are scary words.. but it just means that you can insert the variables into the text by surrounding them with `{{` and `}}` like `{{headpats}}`.
+
+The video shows both ways:
+
+https://github.com/user-attachments/assets/83bebf62-fb4d-4e7d-afa2-d1bb761dbf52
+
+The second way is probably easier. But it's your choice.
+
+Alright, we can change and output variables.. but how do we make it so certain elements of our scene depend on the variables? With 'If' blocks!
+
+'If-then' blocks allows to execute code depending on the condition. Let's make it so we can't exit the scene if we haven't patted Rahi at least 5 times.. and also let's make it so she purrs at 10+ pats. You can try to do it yourself or watch and follow the video.
+
+https://github.com/user-attachments/assets/f4dab44f-1de8-4edd-b015-8efbc2ea095d
+
+(The reason why the 5 got reset to 0 is because dropping the block updates all other blocks.. and since I was still editing the number as far as the UI was concerned, it reset the value to its previous one. You can avoid that just by pressing Enter after entering the number)
+
+The '>=' math blocks means 'more than or equal'. It will 'succeed' (return true) if the left number is more than or equal to the right one. The opposite block is '<=' or 'less than or equal'. Just so you know ^^
+
+Alright, well! For the last thing.. let's turn our 'headpats' variable into a flag, just to test how those work. You can watch the video and see me do it or try it yourself.
+
+https://github.com/user-attachments/assets/fbf9bb5d-00f1-45e7-bd07-9deb7e9004ff
+
+As you can see, I just removed the variable and added the flag with the same name.. and then switched all the blocks with their flag variants.. and that's it! And, also, you might have noticed that the string interpolation works with flags too (Rahi still says the amount of headpats with `{{headpats}}`).. Keep in mind that if you have both a variable and a flag with the same name, it's the variable that will be outputted!
+
+The nice perk of flags is that you can edit them inside the debug menu. The video showed me doing it. And if the player decides to open this scene later, the amount of headpats will be preserved! As it should be.
+
+Alright.. well.. now you can script your scenes with all sorts of logic! There are now almost no limits for you.
+
