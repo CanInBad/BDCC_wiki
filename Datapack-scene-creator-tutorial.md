@@ -319,3 +319,60 @@ The nice perk of flags is that you can edit them inside the debug menu. The vide
 
 Alright.. well.. now you can script your scenes with all sorts of logic! There are now almost no limits for you.
 
+# Scene triggers. Making your scene show up in-game
+
+You have crafted the perfect scene of giving Rahi headpats.. but how do you see it in-game, how do you 'trigger' it? The answer is.. with triggers!
+
+Triggers define exactly -when- your scene will be shown to the player. There are many trigger types, too many for me to explain.. You can make the scene show up as soon as you enter a certain room.. or as soon as you encounter your datapack character.. or when eating in a canteen, working in mineshafts, taking a shower.. or.. or.. or..
+
+You can also add any kind of conditions and even execute some code before running the scene!
+
+I will show you how to make a simple trigger that adds a 'Pat Rahi' button to the player's cell. Pressing that button will launch our scene that we made.
+
+Start by switching to the 'Triggers' tab. You will see a somewhat familiar screen.. but with some small difference there and there..
+
+<img src="https://github.com/user-attachments/assets/107fa1cf-170a-43e6-95e4-c32b1e80cbde" width="50%">
+
+Triggers are also composed out of code blocks.. but as you might notice, the 'Scene' category got replaced with 'Event' one.. that has some trigger-specific blocks.
+
+Add a new trigger and select it in the list. That's how it should look:
+
+![pic](https://github.com/user-attachments/assets/5d68cb77-feb0-48e0-acb4-d07368ddf770)
+
+As you can see, we got some fields that we can edit.. and also a place to put our condition code!
+
+Type defines what kind of trigger it is. Each one has some description written for it so don't be afraid to select different types and read it (Description won't change until you press Save, committing the change of type). Like I said, we want the scene to be trigger-able from player's cell.. so I will choose a `EnterPlayerCell` type and press save.
+
+Execute type.. is a bit tricky to understand. But I will try. It has 2 values you can set it to: React and Run.
+- React means our trigger is checked as soon as the selected event happens. This means the scene would run AS SOON as you enter player's cell (when the game is -reacting- to the player's last action)..
+- Run means our trigger is checked when the scene output happens (when the current scene is being -ran-). This means that we can hook into this output and add our own text or buttons.
+
+We want to add a button to the player's cell so we want to select the 'Run' execute type.
+
+Trigger priority doesn't matter too much in this case. Just know that triggers with higher priority are checked first (but some trigger types override this behaviour and make it so the triggers with higher priority have a proportinally-higher chance to be executed first.. don't worry about it x3)
+
+Alright! Now, the condition code will actually be super simple.. because we don't have any conditions.. So all we need is a `Add button` block that has `Run event` block inside it! `Run event` is a block that will run the scene that the trigger belongs to. But you can also run any other scene from your datapack with the `Run scene` block.. if you want.
+
+After that, you should be able to launch your scene from the player's cell in normal gameplay. Just make sure to 'load' the datapack inside your save first.
+
+This is the video of me going through the whole process:
+
+https://github.com/user-attachments/assets/b2856458-df2c-46a5-8a1b-0425ad5b415d
+
+If you want to also output some text too into the player's cell, add a big text output block so it looks like this:
+
+![pat](https://github.com/user-attachments/assets/62050168-df7a-42bc-a294-c6767f5e2586)
+
+Just as a last test, let's change it so the scene launches as soon as you enter your cell.. but only with a 20% chance.
+
+To do that, switch the 'Execute type' to `React` and remove the `add button` and text output blocks, they won't work with this execute type anyway.
+
+Instead, add an `If` block that has a `Chance` block in it's condition and a `Run event` block in it's code. Set the chance to 20.
+
+Now, if you load the datapack, roughly each 5th visit of your cell will result in Rahi wanting headpats ^^. Watch the video if you want to see the whole process
+
+https://github.com/user-attachments/assets/58d56329-218b-4b7f-9f6a-fae88b8af9c6
+
+The RNG has decided to troll me a bit.. but you get the idea. By using flags you can make it so the scene only gets ran once.. or doesn't get ran unless some other scene happens first and sets the right flags. You can create whole storylines like this!
+
+And that's most of what you need to be able to make your scenes show up in-game! You can add more than one trigger if you want, all with different conditions and types. Again, just don't forget that the triggers won't be checked unless you load the datapack!
