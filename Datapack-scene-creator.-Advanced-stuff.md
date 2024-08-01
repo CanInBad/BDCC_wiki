@@ -77,3 +77,18 @@ Then, when it comes the time to cum, you can check if the condom broke like so:
 ![pic](https://github.com/user-attachments/assets/725b7c8d-072e-495f-be32-1934b8046943)
 
 Yeah, it's a bit clunky. That's the best I got x3. Sorry
+
+# Sex scenes with strapons
+Adding strapon scenes is a bit clunky too, sorry x3
+
+First, you want a special State where the player can choose one of their strapons
+
+![pic](https://github.com/user-attachments/assets/4ccf06f8-1b5f-48b2-a8fa-1c7b6df45d78)
+
+The `Add strapon buttons` adds a button for each strapon that the player has. Selecting any strapon will make the Wearer (pc in this case) put it on. Then the state will be set to the selected one (sex_begins in this case) and the code will be executed (nothing in this case). It's important to let the player cancel the scene in case they don't have any strapons (otherwise they will soft-lock)
+
+Then, after the sex scene ends, you want to return the strapon back to the player's inventory like so:
+
+![pic](https://github.com/user-attachments/assets/4ad8aeb1-744e-4d9f-b284-489af773fbcf)
+
+You get the idea hopefully x3. The `Cum inside` block has a strapon mode that allows to cum using the strapon's contents (if there are any)
