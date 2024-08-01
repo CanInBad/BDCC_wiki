@@ -40,3 +40,40 @@ SETTING a variable/flag to a specific value is mostly fine (because if it gets e
 If you -really- want to increase a flag/variable inside the RUN context, use the `Run code once` block. It tries to make sure that the code inside only gets ran once (it will not run the code if you save/load/use a debug action). But, you know, might as well keep all the var editing inside the `add button` calls.
 
 ![pic](https://github.com/user-attachments/assets/a601850e-3996-4b14-9b73-c6d6c7fe79d1)
+
+# Button checks
+You might have noticed that `Add button` block has a 'CHECKS' button. It allows you to easily add extra conditions to the button. For example, for sex that requires pc to have a vagina, you want to add a `HasReachableVagina` check. The difference between `HasReachableVagina` and `HasVagina` is that `HasReachableVagina`/`HasReachablePenis` will not 'succeed' if the player their penis/vagina in chastity.. so you usually want a 'Reachable' variant.
+
+![pic](https://github.com/user-attachments/assets/16b0defb-9a37-48a4-b3d6-61ac92c9b5a7)
+
+If there are more than one Check, they ALL will be required to be fulfilled.
+
+# Typical sex progression
+For a typical hand-written sex scene, you usually want to have this order of sex blocks:
+
+![pic](https://github.com/user-attachments/assets/0f45d130-1494-4f91-a733-8b550ae971f3)
+
+Time processing is important because it would help to generate some cum in player's/npc's balls (if they are spent for example)
+Then the fuck block to stretch the hole
+Then the cum inside block.. to cum x3
+The orgasm block is important to be last because it will actually drain the balls of the one who's orgasming. So you want it to always be -after- the cum inside blocks. Orgasm block is also the one that sets the Lust to 0
+You can add the opposite orgasm block (npc orgasms from pc) but that's not really required. Only if you want to
+
+# Condoms in sex
+For an optional condom support in your (hand-written) sex scene, you usually want 3 variables:
+- CondomUsed (boolean)
+- CondomBreakChance (number)
+- CondomBroke (boolean)
+
+Then you can present the player with an option to go raw or use a condom (make sure the condom button has a `HasCondoms` check added to it)
+
+![pic](https://github.com/user-attachments/assets/5e72cf5b-6a2a-4c16-af69-4cfe5da15bb2)
+
+Then, you can make each sex animation automatically show up with a condom if you make it read the variable like so:
+
+![pic](https://github.com/user-attachments/assets/e7634888-b020-49d2-83c8-d4a612d68802)
+
+Then, when it comes the time to cum, you can check if the condom broke like so:
+![pic](https://github.com/user-attachments/assets/725b7c8d-072e-495f-be32-1934b8046943)
+
+Yeah, it's a bit clunky. That's the best I got x3. Sorry
