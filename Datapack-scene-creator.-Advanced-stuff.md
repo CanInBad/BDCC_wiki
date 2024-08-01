@@ -1,5 +1,18 @@
 This page will try to teach some of the advanced topics related to the scene creator. I (Rahi) tried to make the editor as intuitive as I can but it still has a fair share of tricky stuff.
 
+# Starting fights, running scenes
+Your usual setup for a fight should look like this:
+
+![pic](https://github.com/user-attachments/assets/4e3d00c0-b9eb-4c7b-b70d-c8c964fc47e0)
+
+The player might win or lose every fight so you gotta prepare 2 states, one for winning and one for losing.
+
+The `Run scene` and `Start sex` blocks only have one space for code. It gets executed when the other-scene/sex ends. You want to have a `Set state` block in there too so you can progress with your scene.
+
+![pic](https://github.com/user-attachments/assets/f023c9ec-3955-42c0-9c41-a13e364b03c2)
+
+Hope it makes sense
+
 # React and Run
 The tutorial explains it a bit but I will try to go in-depth here
 
