@@ -150,6 +150,10 @@ Select the second state and drag in 2 'button' blocks. Give them names and descr
 
 To make it so the second button end the scene, find an `End scene` blocks and do the same, drag it inside the code of the second button.
 
+By the way, it's very important that you don't use (or at least try to not use) blocks that modify the game's state outside of the `add button` calls (getting the pain value of the player is fine but modifying it is not for example). Why not? The scene's state code gets ran every time the game needs to present the scene to the player.. Which is -usually- only once.. but if the player, for example, saves and loads the game, the scene code will be ran again! Another way to trigger that is using any debug action.
+
+So, the rule is very simple. If you want to 'react' to the player's selected action, put these blocks into the code of buttons, they are guaranteed to run once.
+
 https://github.com/user-attachments/assets/ca26b427-ef34-4b96-bcde-7dbe58ee3c65
 
 The reason why it began playing an intro scene of the game when our scene ended is because that's how the editor scene runner works. It 'starts a new game' and then plays our scene on top. You can actually choose to play off of any save that you have. Press the 'Pick save' button and it will show you a list of all the saves that you have.
@@ -376,3 +380,67 @@ https://github.com/user-attachments/assets/58d56329-218b-4b7f-9f6a-fae88b8af9c6
 The RNG has decided to troll me a bit.. but you get the idea. By using flags you can make it so the scene only gets ran once.. or doesn't get ran unless some other scene happens first and sets the right flags. You can create whole storylines like this!
 
 And that's most of what you need to be able to make your scenes show up in-game! You can add more than one trigger if you want, all with different conditions and types. Again, just don't forget that the triggers won't be checked unless you load the datapack!
+
+# Quests. Turning our scene into a quest
+
+Quests (or tasks) are pretty easy to add if you already have a scene made. Doesn't that sound a bit backwards? Maybe. But that's why it is so easy.
+
+Basically, quests in BDCC don't control anything, the sole purpose of them is to guide the player. An example should help you understand.
+
+Let's make a simple quest where you have pat Rahi 15 times through the scene that we created.
+
+Start editing the datapack (quests are a separate thing from scenes). Scroll down and you will see a place where you can make a new quest. Press new, give it some name, all the usual stuff.
+
+![pic](https://github.com/user-attachments/assets/c58ba396-be6a-4966-8aad-fbfc3cc1c6a1)
+
+After that, you will see this simple form. Fill it out as you see fit.
+
+![pic](https://github.com/user-attachments/assets/7d976a80-6e64-435b-814e-716768b3ff05)
+
+The only difference between a main and a non-main quest is that main quests are displayed first in the task list. Quests with higher priority will be first. Simple stuff.
+
+Switch to the 'Stages', you will see this (somewhat familiar) editor:
+
+![pic](https://github.com/user-attachments/assets/09c09772-1170-442e-b749-6d2ee94b94f4)
+
+Yeah, quests are made out of code blocks too. But it's very easy! Just try to understand how it works.
+
+The most important bit is that quest code only gets executed when the player looks at the task list. And only then. The purpose of this code is to decide if the quest should be 'visible', 'completed' and also to output a list of stages. Each stage is just a line of text, something like "Pat Rahi 15 times!" or "Go pay Tavi a visit" or just "You did it, task completed!".
+
+By default the quest will be hidden and not-completed. To make it appear in the task list, you add a `Mark Quest as Visible` block. If you want the quest to always be visible, you just add it on the top-most level, outside of any ifs.
+
+![pic](https://github.com/user-attachments/assets/a6f3be91-5621-4efc-a9d5-ef9bb247385a)
+
+If you want the quest to only be visible after some flag was set, you wrap it into an if statement. This is just an example:
+
+![pic](https://github.com/user-attachments/assets/664532ac-adfd-4e35-9af8-6fd4b20aef2a)
+
+Same for the quest completed block, you will usually just add it behind some flag check like so:
+
+![pic](https://github.com/user-attachments/assets/a1738c22-829c-4e18-81da-6f31aa6b31b5)
+
+Then, all you need is to add a few 'stages' using the big text output block. You can add more if checks to make certain stages appear in the task list after certain flags were set.
+
+![pic](https://github.com/user-attachments/assets/47b6f486-65cf-40b6-acb3-e098917c59fb)
+
+This is how your quests will usually look, just a bunch of ifs, flag checks and big blue blocks. Hopefully it makes sense.
+
+I will now create a simple quest for our scene that we created during this tutorial. The quest won't be visible unless the player pats Rahi at least once. It will track the progress and mark itself as completed at 15 pats.
+
+https://github.com/user-attachments/assets/471d2257-4a94-45a7-9794-17cb54137cc7
+
+(Btw, you can duplicate blocks by holding Alt when dragging and dropping. You can duplicate entire chains)
+
+As you can see, you can use string interpolation inside these output blocks too.
+
+If you want to show the same 'Task added', 'Task updated' messages that the game's built-in quest have, you will have to add them into your scene yourself with the `add Message` block. (The game does that for its quests).
+
+And that's it. Like I said, quests work pretty simply in BDCC, they're just here for show. But that also makes adding them easier as they don't affect the gameplay in any way.
+
+# Good job!
+
+If you're reading this, good job! Hope you are now able to create something with this editor. Make your dreams come true x3
+
+I tried to show all of the basics but obviously I can't explain what every block does and how it works, you will have to explore yourself or ask around. I will try to show some advanced examples here: [Advanced stuff](Datapack-scene-creator.-Advanced-stuff)
+
+Take care! Meow meow.
