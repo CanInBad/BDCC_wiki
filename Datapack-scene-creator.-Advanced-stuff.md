@@ -1,5 +1,16 @@
 This page will try to teach some of the advanced topics related to the scene creator. I (Rahi) tried to make the editor as intuitive as I can but it still has a fair share of tricky stuff.
 
+# Buttons that lead to random states
+By default, the `add button` block will always point you to the same selected State. But it's fairly easy to add randomness here:
+
+![pic](https://github.com/user-attachments/assets/940cc8ac-7cd8-44af-8f28-6da0c78b432b)
+
+As you can see, by default the State will be switched to 'pc_lost'. But there is also a 50% chance that the state will be switched to 'pc_won' instead and the player will also get 10 credits. If you want to expand it to 3 choices, you wanna do this:
+
+![pic](https://github.com/user-attachments/assets/fe6856ab-df60-49e6-a09f-6ac22980048b)
+
+In this setup, there is a 5% chance that the player will get some sex. If they don't, there is a 50% chance that they will still win. You get the idea I hope x3
+
 # Starting fights, running scenes
 Your usual setup for a fight should look like this:
 
