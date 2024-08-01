@@ -96,7 +96,7 @@ First, you want a special State where the player can choose one of their strapon
 
 ![pic](https://github.com/user-attachments/assets/4ccf06f8-1b5f-48b2-a8fa-1c7b6df45d78)
 
-The `Add strapon buttons` adds a button for each strapon that the player has. Selecting any strapon will make the Wearer (pc in this case) put it on. Then the state will be set to the selected one (sex_begins in this case) and the code will be executed (nothing in this case). It's important to let the player cancel the scene in case they don't have any strapons (otherwise they will soft-lock)
+The `Add strapon buttons` adds a button for each strapon that the player has. Selecting any strapon will make the Wearer (pc in this case) put it on (But it's always the player's strapons that are offered! It's just that you can make an npc wear one of the player's strapons if you want). Then the state will be set to the selected one (sex_begins in this case) and the code will be executed (nothing in this case). It's important to let the player cancel the scene in case they don't have any strapons (otherwise they will soft-lock)
 
 Then, after the sex scene ends, you want to return the strapon back to the player's inventory like so:
 
