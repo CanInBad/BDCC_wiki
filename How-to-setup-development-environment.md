@@ -140,11 +140,12 @@ This is a typical way people set up their first Godot project to use.
 
 ### Setting up
 
-You can download the whole project as a [ZIP](http://github.com/Alexofp/BDCC/zipball/main/) then extract or use [git to clone it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), put the project somewhere.
+You can download the whole project as a [ZIP](http://github.com/Alexofp/BDCC/zipball/main/) or use [git to clone it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), put the project somewhere.
 
 ### Open the project in Godot Editor
 
-Open your Godot Editor, on first launch there won't be any items in this screen. Press Import, then copy the full path to your 
+Open your Godot Editor, on first launch there won't be any items in this screen. Press Import,  
+If you download the zip, locate your zip to put on "Project Path" field, new 
 
 <div align="center">
    <img src="images/devGuide/godotImportProject.png" alt="Import button" width="50%"/><br/>
