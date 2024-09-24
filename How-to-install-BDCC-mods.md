@@ -87,8 +87,7 @@ This section will skip the general information.
 > If the mod doesn't have metadata packed with them, it will display
 > `No 'insertModFileNameHere.json' file provided inside the mod`.  
 > This **DOESN'T HAVE ANY IMPACT ON ITS FUNCTIONALITY**.  
-> If you're having trouble(s) playing the game with mod(s), please consult this page (not done)
-<!-- Don't forget to link it here when finished troubleshooting page -->
+> If you're having trouble(s) playing the game with mod(s), [please consult this page](User's-troubleshooting)
 
 There are 4 buttons to manage mods, they're pretty self explanatory but we'll cover what order of mods affect them.
 
@@ -214,7 +213,7 @@ Restart the game and the mod(s) should appear.
 #### Import in Mods menu at title screen
 
 > [!CAUTION]
-> If you're running Android 13+, please give the game permission to access your files. Please see this [page for extensive guide](https://gist.github.com/CanInBad/cd1fb519a4fc604a83115b553a4a7402#file-3permshenanigans-md).
+> If you're running Android 13+, please give the game permission to access your files. Please see this [page for extensive guide](User's-Permission-Shenanigans).
 
 1. Open the game. If you already have [mod launcher enabled](#enabling-bdcc-mod-launcher), either hit Launch BDCC with mods (Slower if you have mods) or Play without mods (This will load faster).
 2. Once you reach title screen, click Mods

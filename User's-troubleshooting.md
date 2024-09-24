@@ -12,9 +12,9 @@ Simply ask them in the game's discord. If you're lucky, they might answer to you
 Inside main menu, click options. Find the Debug section. Click on the square until it is checked, then Save & close.
 
 > [!NOTE]
->It is **NOT recommended** to turn on debugging menu on your first run, if you need genuine help with gameplay, please follow the last section.
+> It is **NOT recommended** to turn on debugging menu on your first run, if you need genuine help with gameplay, please follow the last question.
 
-### My game CRASHES when loading into main menu
+### My game CRASHES/force close when loading into main menu
 
 This might be Android only issue since it's necessary to tap on the screen for preventing the phone to go to sleep. And since you're tapping on the screen while it is technically not responding, Android will ask user to stop the game.
 
@@ -26,15 +26,20 @@ Although, you can try to mitigate the problem by doing these steps:
 3. Upgrade your phone
    * If you already tried all of those options then it about time to upgrade your smart phone.
 
-If you're using mods, please see [this section.](#my-game-crashes-when-loading-into-main-menu-while-the-game-had-mods)
+**If you're using mods, please see [this section.](#my-game-crashesforce-close-when-loading-into-main-menu-while-the-game-had-mods)**
+
+if this happens on other devices than android then please report it a bug with the following information:
+ - Your OS
+ - Your device specification (must include CPU, GPU, driver versions)
+ - What you think what is the version you're playing on.
 
 ### I can't export or import saves using the in-game exporter/importer
 
-This is an issue exclusive to Android. For Android's case, you have to grant the game permissions to `android.permission.WRITE_EXTERNAL_STORAGE` and `android.permission.READ_EXTERNAL_STORAGE`. Since those permissions technically don't existed in Android 13 and up, the game can't request them. You can find the instructions to [grant them here.](https://gist.github.com/CanInBad/cd1fb519a4fc604a83115b553a4a7402#file-3permshenanigans-md)
+This is an issue exclusive to Android. For Android's case, you have to grant the game permissions to `android.permission.WRITE_EXTERNAL_STORAGE` and `android.permission.READ_EXTERNAL_STORAGE`. Since those permissions technically don't existed in Android 13 and up, the game can't request them. You can find the instructions to [grant them here.](User's-Permission-Shenanigans)
 
 ### My game CRASHES when I loaded into a game save or playing
 
-If you're using mods, [skip to this section](#my-game-crashes-when-i-loaded-into-a-game-save-with-mods).
+If you're using mods, [skip to this section](#my-game-crashes-when-i-loaded-into-a-game-save-or-playing-with-mods).
 
 This might be a bug in the game. If you can recall, please take notes of:  
 * Steps you did to get the game crash.  
@@ -50,16 +55,19 @@ Please provide those notes when you're reporting in [issues](https://github.com/
 
 ### How can I manually install mods?
 
-[Manually installing mods](/How-to-install-BDCC-mods#manually-installing-mods)
+[Manually installing mods](How-to-install-BDCC-mods#manually-installing-mods)
 
 ### My game hangs when loading into main menu while the game had mods
 
 Please wait until it finishes loading. If you're on Android and you tap the screen, it will prompt you to stop the game since technically its not responding.  
 We don't know what exactly cause the pause but its likely read speed and device's performance.
 
-### My game CRASHES when loading into main menu while the game had mods
+### My game CRASHES/force close when loading into main menu while the game had mods
 
 This might be Android only issue since it's necessary to tap on the screen for preventing the phone to go to sleep. And since you're tapping on the screen while it is technically not responding, Android will ask user to stop the game.
+
+Android also has unique way to use mods, its the fact that the game **requires BDCC.pck to be rebuilt every update**.  
+Please try to rebuild BDCC.pck then try to start the game
 
 There might other reasons such has mods force closing the game or your device is out of memory.
 
@@ -70,6 +78,8 @@ Although, you can try to mitigate the problem by doing these steps:
    * Clearing your cache might help make the game load "smoothly" (not tested but some say it helps).
 3. Upgrade your phone
    * If you already tried all of those options then it about time to upgrade your smart phone.
+
+if this happens on other devices than android then please try without mods first, if the issue persisted please report it as a bug using same information as [this section](#my-game-crashesforce-close-when-loading-into-main-menu). 
 
 ### My game CRASHES when I loaded into a game save or playing with mods
 
@@ -83,6 +93,4 @@ Please provide those notes when you're reporting in [mods-discussion](https://di
 
 ### The body part skins' is not colored!
 
-Some body part/skins mods doesn't support skins because they came before skins exists. [See issue #1 of Alexofp/BDCCMods.](https://github.com/Alexofp/BDCCMods/issues/1)
-
-
+Some body part/skins mods doesn't support skins because they came before skins exists. We cannot fix those mods magically. [See issue #1 of Alexofp/BDCCMods.](https://github.com/Alexofp/BDCCMods/issues/1)

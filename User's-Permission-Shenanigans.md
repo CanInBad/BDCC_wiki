@@ -83,11 +83,14 @@ The external storage in this context means anything beside its internal, just fo
    ```
 
 Go back and check if you can tap import/export save and mods.  
-If no, you can ask for help in [modding-help at the game's discord](https://discord.com/channels/972105858932678656/978526869668397057)
+If no, you can ask for help in [modding-help at the game's discord](https://discord.gg/7UGYBvQrc3)
 <br />
 <br />
 
 ## Termux
+
+> [!NOTE]
+> It is recommend to use the [pc required option](#pc-required-option) rather than termux since it would be easier.
 
 ### Requirements
 
@@ -116,7 +119,8 @@ Open the app and type in
 
 You should be able to use `adb` now, try typing `adb start-server` and enter to start the server. If there is nothing error out then it should be fine to go to next step
 
-If not, follow **NOT DONE** <!-- for the love of god please replace me REPLACEME -->
+if not then you'll have to follow [this repository for guide on how to install ADB from external sources](https://github.com/nohajc/termux-adb/blob/master/README.md#installation)  
+After installation you should be able to start server again. if all else fail just get a computer and do [computer required option.](#pc-required-option)
 
 ### 2) Enable Debugging mode
 
@@ -135,15 +139,17 @@ You have to enable wireless debugging first, go to Developer options and scroll 
 
 If your device allows split-screen view or floating window of your apps, then you should make use of it in this step.
 
-In Wireless Debugging menu, hit "Pair device with pairing code", You will have a pop-up showing your pairing code, local IP, and a port to be used in pairing process.
-Make the settings app a floating windows or split-screen.<br/>
+In Wireless Debugging menu, hit "Pair device with pairing code", You will have a pop-up showing your *1)* **pairing code**, *2)* **local IP**, and *3)* **a port** to be used in pairing process.
+Make the settings app a floating windows or split-screen.  
 This is required because if you close or freeze the settings app, the pairing process will be canceled. 
 
 <div align="center">
 
 <img src="images/installMods/wirelessPairingCode.png" alt="Wireless Debugging Pairing popup" width="75%" /> 
 </div>
-<br />
+
+> [!IMPORTANT]
+> **DO NOT USE THE PORT FROM PREVIOUS SCREEN**, ONLY USE ONE <mark>FROM THE POPUP</mark>
 
 Go back to Termux and type in `adb pair <ip>:<port> <code>`.  
 Substitute the `<ip>` with IP address, `<port>` with port (numbers after semi colon), and `<code>` with the WiFi pairing code.
@@ -181,4 +187,4 @@ adb shell pm grant org.rahimew.bdcc android.permission.READ_EXTERNAL_STORAGE
 ```
 
 Go back and check if you can tap import/export save and mods.  
-If no, you can ask for help in [modding-help at the game's discord](https://discord.com/channels/972105858932678656/978526869668397057)
+If no, you can ask for help in [modding-help at the game's discord](https://discord.gg/7UGYBvQrc3)
