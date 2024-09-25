@@ -9,14 +9,12 @@ If you aren't making a mod and only using them, please go to [User Support page.
 [How to set up development environment](How-to-setup-development-environment)  
 Inside the page will have basic information and step by step on how to set everything up .
 
-<!--
 BDCC is running on Godot 3.x engine, usually the latest stable version. At the writing of this tutorial Godot 4.x is in beta but moving to it would require major rewrites as the scripting language gdscript was changed quite a bit. So, what do you need to start modding.
 
 - Latest Godot 3 build. Get it here: https://godotengine.org/download Standard 64 bit version will do, mono is not used. Download godot 3! not 4!
 - Game source files. Use git if you know how or just download the zip archive from https://github.com/Alexofp/BDCC Click the green button and press Download as zip. Git is still preferred though in case you will want to make a pull request. Easiest git client is GitHub Desktop
 
 That should be it. Launch Godot, press import and point it to the `project.godot` file inside the game source files folder. Editor should open with BDCC project loaded. From there you can start exploring or just run the game by pressing the play button in the top right corner. Best way to learn how to do something is to check one of the existing scenes.
--->
 
 ## What things can be done through mods in BDCC
 
