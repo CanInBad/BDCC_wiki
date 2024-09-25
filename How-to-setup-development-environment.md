@@ -17,7 +17,8 @@
 BDCC is running on Godot version 3.X, but recommended version to build mods on is 3.5.3  
 You can get the [Godot Editor 3.5.3 here.](https://godotengine.org/download/archive/3.5.3-stable/) You will have to add Godot Editor to PATH environment if you want to follow some of the guides
 
-> [!IMPORTANT] Do not get the mono version
+> [!IMPORTANT] 
+> Do not get the mono version
 > .NET or mono version is a separate binaray that support C#, **BDCC isn't built on mono**
 
 As stated in the home page, we cannot migrate to Godot 4 directly without undergoing rewriting, feel free to make the migration yourself.
