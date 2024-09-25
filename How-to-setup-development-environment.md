@@ -1,13 +1,16 @@
 # Setting up development environment
 
-<!-- <details>
+<details>
 <summary>Table of contents</summary>
 
 |  Section  | Link |
 | --- | --- |
 | Basic information | [Link](#basic-information) |
-|a|
-</details> -->
+| Guides | [Link](#guides) |
+| Purist | [Link](#godot-editor-purist) |
+| VSCodium | [Link](#github-fork---git-clone---vscode-ium) |
+
+</details>
 
 ## Basic information
 
@@ -63,6 +66,51 @@ Click "New" then there should be an empty box below all the paths in the table, 
 Congratz, you just add godot in your path! try by typing `where godot` in new cmd sessions
 
 # Guides
+
+## Godot Editor Purist
+
+This is a typical way people set up their first Godot project to use.
+
+### Requirements
+
+- Godot Editor
+
+### Setting up
+
+You can download the whole project as a [ZIP](http://github.com/Alexofp/BDCC/zipball/main/) or use [git to clone it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), put the project somewhere.
+
+### Open the project in Godot Editor
+
+Open your Godot Editor, if you haven't import the project; on first launch there won't be any items in this screen. Press Import,
+
+<div align="center">
+   <img src="images/devGuide/godotImportProject.png" alt="Import button" width="50%"/><br/>
+   <sup>Import button</sup>
+</div>
+
+If you download the zip, click Browse, select the zip, then another text box will appear after you select Open, click Browse on the one next to new textbox, go to where you would like to put the project in. The location of the new project must be an empty folder. After you decided where you are going to put your project, click Select Current Folder.  
+You can then click Import & Edit
+
+<div align="center">
+   <img src="images/devGuide/godotImportZIP.png" alt="Importing Zip Dialog with everything completed as described above" width="50%"/><br/>
+   <sup>Importing Zip Dialog with everything completed as described above</sup>
+</div>
+
+If you cloned the project with git, the process will differ slightly.  
+Click Browse, go to where you cloned the project, select `project.godot` file then open. You then click Import & Edit.
+
+<div align="center">
+   <img src="images/devGuide/godotImportProjectDotGodot.png" alt="Importing the cloned project" width="50%"/><br/>
+   <sup>Importing the cloned project</sup>
+</div>
+
+If you just did previous step or already imported the project, all projects you imported will live on the godot editor's "main menu" screen.  
+Simply double click the project you want to edit.
+
+Congratz, you just open the project in editor. Go wild.  
+To test run the game, either press F5 or press the "Play" button on top right. This will launch a debugging session.
+
+You are now ready to start modding the game. Go back to [Home page](Home) for quick links to documentation on how to adding certain features in the game
 
 ## GitHub fork - git clone - VSCode(-ium)
 
@@ -126,28 +174,34 @@ or full path if you haven't, copy paste full path to the executable file.
 
 Close the settings tab and press Ctrl + Shift + P to open command palette, then type `> open workspace with godot editor`, press enter and it should open godot editor inside the repository.
 
+You can then make changes and add contents. For quick links on adding contents to the game please see [home page](Home)
+
+### Running debug session with VSCode
+
+If you aren't planning to add [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to the project, you can just press F5 in current configuration to start a debugging session attached to VSCode; even if there is no editor running (as the editor is only surving as [language server](https://en.wikipedia.org/wiki/Language_Server_Protocol) in this configuration)
+
+If you are going to use submodules in the future, You have to create default run and debug profile. for quick configuration you can use my profile, put this in `.vscode/launch.json`
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "GDScript Godot",
+            "type": "godot",
+            "request": "launch",
+            "project": "${workspaceFolder}",
+            "port": 6007,
+            "address": "127.0.0.1",
+        }
+    ]
+}
+```
+
+This will mark opened workspace folder as root for godot debug session to launch in.
+
+For more documentation on this specific topic please see [Godot Tools' documentation on GDScript Debugger](https://github.com/godotengine/godot-vscode-plugin/blob/master/README.md#gdscript-debugger)
+
 ### Making changes and upload it to github
 
 After you made your changes and you want it on GitHub then please look at the Source Control, commit your changes and sync. For more information regarding using this feature [please see this page.](https://code.visualstudio.com/docs/sourcecontrol/overview)
-
-## Godot Editor Purist
-
-This is a typical way people set up their first Godot project to use.
-
-### Requirements
-
-- Godot Editor
-
-### Setting up
-
-You can download the whole project as a [ZIP](http://github.com/Alexofp/BDCC/zipball/main/) or use [git to clone it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), put the project somewhere.
-
-### Open the project in Godot Editor
-
-Open your Godot Editor, on first launch there won't be any items in this screen. Press Import,  
-If you download the zip, locate your zip to put on "Project Path" field, new 
-
-<div align="center">
-   <img src="images/devGuide/godotImportProject.png" alt="Import button" width="50%"/><br/>
-   <sup>Import button</sup>
-</div>
