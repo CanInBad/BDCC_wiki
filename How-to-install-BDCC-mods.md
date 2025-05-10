@@ -1,9 +1,14 @@
 # Where <sup><sub>(and how)</sub></sup> to get mods
 
 > [!IMPORTANT]
-> Mods are simple zip archives. **Don't unpack them.**
+> Mods are simple zip archives. <ins>**Don't unpack them.**</ins>
 >
 > Keep in mind that some mods **NEED** to be updated for each new version of a game. If the game crashes on start, remove mods.
+
+<!-- bro this isn't even relevant to modding - CIB
+> [!CAUTION]
+> This guide is created before `0.1.8` and doesn't have information about caching
+-->
 
 There are two ways.
 
@@ -17,7 +22,7 @@ Or you can get them inside the mod browser, instructions are below.
 
 ### Enabling BDCC Mod Launcher
 
-If you already installed mods, [skip this section.](#inside-the-mod-launcher)
+If you already installed mods, [skip this section.](#inside-the-mod-launcher) since it will automatically appear if you have one
 
 To enable BDCC Mod Launcher, you must at least reached title screen.  
 1. Click Options.
@@ -43,13 +48,13 @@ Inside the mod browser, on the left should be a list of mods. It is recommended 
 > [!NOTE]
 > 1. The mod browser is sorted by newest first by default.   
 > 2. You can scroll down in the mod's information if the description is long enough.
-> 3. Don't forget to read the description.  
+> 3. <ins>Don't forget</ins> to read the description.  
 > 4. Download button is always on top of the metadata/information  
 
 > [!WARNING]
 > Some mods will show you what game version its compatible with.  
-> It is not recommended to download and run mods that isn't compatible.
-> On that note, few mods' description will tell you if it should be fine to run or not.
+> It is best to avoid downloading and run mods that isn't compatible with the current version.  
+> On that note, few mods' description will tell you if it should be fine to run or not. If you have any doubt, try to seek the mod maker and ask them directly
 
 <div align="center">
 
@@ -81,13 +86,17 @@ It now has 3 sections, The metadata / general information w/ description, button
 This section will skip the general information.
 
 > [!NOTE]
-> If the Game Version shows red, that means the mod **may not** be compatible with this this game version you're running. It doesn't prevent the mod from working.
+> If the Game Version shows red, that means the mod **may not** be compatible with this this game version you're running.  
+> **This doesn't prevent the mod from working.**
 
 > [!IMPORTANT]
 > If the mod doesn't have metadata packed with them, it will display
 > `No 'insertModFileNameHere.json' file provided inside the mod`.  
 > This **DOESN'T HAVE ANY IMPACT ON ITS FUNCTIONALITY**.  
 > If you're having trouble(s) playing the game with mod(s), [please consult this page](User's-troubleshooting)
+
+> [!IMPORTANT]
+> If the mod has the extension `.pck`, then the mod launcher will fail to read its contents and show "Failed to load info" on the mods detail.
 
 There are 4 buttons to manage mods, they're pretty self explanatory but we'll cover what order of mods affect them.
 
@@ -101,7 +110,7 @@ Sometimes there will be a changelog exclusive to the mod browser.
 
 ## Manually installing mod(s)
 
-Once you obtained packed mod(s) either from [Alexofp/BDCCMods](https://github.com/alexofp/bdccmods) or the [game's discord](https://discord.com/channels/972105858932678656/1021686418512289792), here are many ways to install them manually
+Once you obtained mod(s) either from [Alexofp/BDCCMods](https://github.com/alexofp/bdccmods) or the [game's discord](https://discord.com/channels/972105858932678656/1021686418512289792), here are many ways to install them manually
 
 ### Windows
 

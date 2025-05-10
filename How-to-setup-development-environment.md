@@ -1,7 +1,7 @@
 # Setting up development environment
 
 <details>
-<summary>Table of contents</summary>
+<summary><b>Table of contents</b></summary>
 
 |  Section  | Link |
 | --- | --- |
@@ -14,25 +14,28 @@
 
 ## Basic information
 
-BDCC is running on Godot version 3.X, but recommended version to build mods on is 3.5.3  
-You can get the [Godot Editor 3.5.3 here.](https://godotengine.org/download/archive/3.5.3-stable/) You will have to add Godot Editor to PATH environment if you want to follow some of the guides
+BDCC is running on Godot version 3.6.  
+You can get the [Godot Editor 3.6 here.](https://godotengine.org/download/archive/3.6-stable/)
 
 > [!IMPORTANT] 
-> Do not get the mono version  
+> **Do not get the mono version**  
 > .NET or mono version is a separate binaray that support C#, **BDCC isn't built on mono**
 
 As stated in the home page, we cannot migrate to Godot 4 directly without undergoing rewriting, feel free to make the migration yourself.
 
 You can setup dev environment in multiple ways. This guide will attempt to provide instructions in those different ways, some are better than another so pick wisely.
 
-**It isn't recommended to use and build mods on Android or web editor. <mark>Just because they exist, didn't mean that they work great.</mark>**
+<b>It's best to avoid using and creating mods on Android or the web editor  
+<mark>Just because they exist, didn't mean that they work great.</mark></b>
 
-## (Optional) Adding Godot to PATH 
+## <ins>(Optional)</ins> Adding Godot to PATH 
 
-for skipping this section, [Click me](#guides)
+For skipping this section: [**CLICK ME**](#guides)
 
 > [!IMPORTANT]
-> THIS IS WINDOWS ONLY, for unix equaliance please see your documentation on bash profile
+> **THIS IS WINDOWS ONLY**, for unix equaliance please see your documentation on bash profile
+
+The goal of this process is to allow you to start Godot from anywhere on your system
 
 This will assume that you already have Godot Editor inside your system and not yet add it it PATH
 
@@ -123,7 +126,7 @@ This is a highly recommended to use this method as it's the most complete setup 
 - GitHub account
 - Git  
   - If you don't have git installed and setup, [please do so.](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git#setting-up-git)
-- [VSCode](https://code.visualstudio.com/Download) (or [VSCodium](https://vscodium.com/) if you prefer) installed  
+- [VSCode](https://code.visualstudio.com/Download) (or [VSCodium](https://vscodium.com/), or whatever vscode fork you prefer) installed  
   - Please also get Godot-tools plugin either with [these instructions](https://github.com/godotengine/godot-vscode-plugin#download) or inside "Extensions" tab.
 
 ### Setting up

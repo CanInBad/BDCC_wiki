@@ -1,3 +1,5 @@
+# THIS INFORMATION IS OUTDATED SINCE `0.1.6` BUT YOU CAN STILL FOLLOW THROUGH
+
 # Floors Basics
 
 Floors can be registered by putting the script and scene file in `res://Game/World/Floors`, the ID will be whatever the file name is without the extension.  

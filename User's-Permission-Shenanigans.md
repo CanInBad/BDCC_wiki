@@ -1,17 +1,26 @@
 This page is for **Android 13 and up**, the reason being [Android 13 changes how app get access with storage](https://developer.android.com/about/versions/13/behavior-changes-13#granular-media-permissions)
 
-For saves:  
-Update 0.1.2 tried to mitigate importing process by using the BDCCSaves inside Documents folder for pesudo-importing save but the game itself still store saves inside its internal storage that normal file managers have **NO access** to where the saves are (unless exclusively given the permission).
+<ins>**For saves:**</ins>  
+Update 0.1.2 tried to mitigate importing process by using the BDCCSaves inside `Documents` folder for pseudo-importing save but the game itself still store saves inside its internal storage that normal file managers have **NO access** to where the saves are (unless exclusively given the permission).
 
 This page is here to help **return the functionality of import and export button** in the game's load menu.  
 
 This required a phone that isn't restricted the developer options (mainly Xiaomi phones)
 
-For mods:
+<ins>**For mods:**</ins>
 
 While mods are [saved externally](https://github.com/Alexofp/BDCC/blob/58885806c1bb8254ce250a56a08d241d5a106623/GlobalRegistry.gd#L94-L103), [the importing process](How-to-install-BDCC-mods#import-in-mods-menu-at-title-screen-3) inside the game still requires now defunct `READ_EXTERNAL_STORAGE` permission.
 
 This page is aimed to return the functionality of importing mod by granting those defunct permission manually.
+
+<details>
+<summary><b>Table of contents</b></summary>
+
+|  Section  | Link |
+| --- | --- |
+| PC required option | [Link](#pc-required-option) |
+| Termux option | [Link](#termux) |
+</details>
 
 ## PC required option
 

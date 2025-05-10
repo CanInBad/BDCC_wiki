@@ -174,3 +174,38 @@ Here is the resulting mod from me. Use as example or to troubleshoot if you want
 ## Do you have to make a module?
 
 Not really, module is basically just a way of grouping all the files related to your mod into one folder. Very handy for organizing. But it's possible to create a mod without it having any modules in it.
+
+## Adding metadata to your mod
+
+Making metadata should provide your users information about the mod inside the launch screen/mod launcher.
+
+You can simply create new `.json` file named after your mod, like for example I want to create metadata for `TestItemMod.zip`, I have to create `TestItemMod.json` and put it inside the zip file.
+
+Inisde the `.json` required 4 names and its datatypes:
+1. `author` **|** `string`
+2. `gameversion` **|** `string`
+3. `modversion` **|** `string`
+4. `description` **|** `string`
+
+> [!NOTE]
+> `gameversion` can take single OR multiple version OR all version by providing one of these syntax:
+>
+> For singular just provide the version like for example `"gameversion": "0.1.8"`  
+> For multiple version, provide versions separated by command for example `"gameversion": "0.1.3,0.1.4,0.1.5,0.1.6"`  
+> For all version you can just provide a star (\*) in the gameversion string for example `"gameversion": "*"`
+>
+> Version suffix doesn't matter, the version comparison doesn't care the suffix eg `fix1`
+
+And you can provide additional information for people who maintain mod browser by adding the name `name` with data type `string`
+
+In summary, inside your json should look like this
+
+```json
+{
+    "name": "Test Item Mod",
+    "description": "\nAdds something, probably",
+    "author": "Wiki: CanInBad, Game: Alexofp",
+    "modversion": "Test1",
+    "gameversion": "0.1.1,0.1.2,0.1.3"
+}
+```
